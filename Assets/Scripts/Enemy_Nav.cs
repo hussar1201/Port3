@@ -13,35 +13,24 @@ public class Enemy_Nav : MonoBehaviour
         get;
         private set;
     }
+
+    public bool stopped = false;
     // Start is called before the first frame update
     void Start()
     {
         pathFinder = GetComponent<NavMeshAgent>();
         pc = FindObjectOfType<PlayerController>();
-        speed = pathFinder.speed;
-
-        StartCoroutine("UpdatePath");
+        speed = pathFinder.speed;       
     }
 
     // Update is called once per frame
     void Update()
     {
-                    
-    }
-
-    private IEnumerator UpdatePath()
-    {
         pathFinder.isStopped = false;
-        Debug.Log("TRACKING");
-                
-        pathFinder.SetDestination(pc.transform.position);
-                
-        yield return new WaitForSeconds(.1f);
+        if (pathFinder.velocity == Vector3.zero) { stopped = true;}
+        else stopped = false;
+        pathFinder.SetDestination(pc.transform.position); 
     }
-
-
-
-
 
 
 }
