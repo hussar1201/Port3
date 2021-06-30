@@ -217,6 +217,8 @@ GameObject:
   - component: {fileID: 4855937711292026471}
   - component: {fileID: 4829173728765794097}
   - component: {fileID: 4837108320925281193}
+  - component: {fileID: 2732594586083166731}
+  - component: {fileID: 6815665194779447876}
   m_Layer: 6
   m_Name: Wheels_back_left
   m_TagString: Untagged
@@ -287,6 +289,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &2732594586083166731
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859442211337966235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50295514
+  m_Center: {x: -0.0035055056, y: 0.00000011920929, z: 0}
+--- !u!54 &6815665194779447876
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859442211337966235}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4859521893432837097
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +737,8 @@ GameObject:
   - component: {fileID: 4855771013104099375}
   - component: {fileID: 4829138735643266321}
   - component: {fileID: 4836975536880795649}
+  - component: {fileID: 4456264899074322696}
+  - component: {fileID: 2943651104676756442}
   m_Layer: 6
   m_Name: Wheels_back_right
   m_TagString: Untagged
@@ -776,6 +809,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &4456264899074322696
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860952571038360419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50295514
+  m_Center: {x: 0.0035055056, y: 0.00000011920929, z: 0}
+--- !u!54 &2943651104676756442
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860952571038360419}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4860966759056159933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2502,8 @@ GameObject:
   - component: {fileID: 4855593261325381955}
   - component: {fileID: 4831144113959256481}
   - component: {fileID: 4838970931795581241}
+  - component: {fileID: 7974473640184155839}
+  - component: {fileID: 3711806206726406523}
   m_Layer: 6
   m_Name: Wheel_front_left
   m_TagString: Untagged
@@ -2510,6 +2574,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7974473640184155839
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861382135296350923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50295514
+  m_Center: {x: -0.0035055056, y: -0.00000023841858, z: 0.00000011920929}
+--- !u!54 &3711806206726406523
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861382135296350923}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4861397646507113923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,6 +2614,8 @@ GameObject:
   - component: {fileID: 4855655001752987511}
   - component: {fileID: 4860495526981393186}
   - component: {fileID: 4860495526981393187}
+  - component: {fileID: 27478378}
+  - component: {fileID: 27478381}
   m_Layer: 6
   m_Name: APC
   m_TagString: Untagged
@@ -2536,7 +2631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4861397646507113923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4742336, y: 0.0000038146973, z: 94.81302}
+  m_LocalPosition: {x: 0, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4862976503479849071}
@@ -2562,7 +2657,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2578,8 +2673,42 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.018618, y: 2.4491649, z: 5.059265}
-  m_Center: {x: -0.007601738, y: 1.1606214, z: 0.40288544}
+  m_Size: {x: 2.018618, y: 1.7813723, z: 5.059265}
+  m_Center: {x: -0.007601738, y: 1.4945177, z: 0.40288544}
+--- !u!195 &27478378
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861397646507113923}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: -0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &27478381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861397646507113923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5195a12c634c40eea3ad0c04e4bddc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4861419867057665217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,6 +2963,8 @@ GameObject:
   - component: {fileID: 4862884386197783565}
   - component: {fileID: 4829629118062560147}
   - component: {fileID: 4837092333105227971}
+  - component: {fileID: 3673146733662802335}
+  - component: {fileID: 280196420709273102}
   m_Layer: 6
   m_Name: Wheel_front_right
   m_TagString: Untagged
@@ -2904,6 +3035,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &3673146733662802335
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861462719470077023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50295514
+  m_Center: {x: 0.0035055056, y: -0.00000023841858, z: 0.00000011920929}
+--- !u!54 &280196420709273102
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861462719470077023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4861546824461449911
 GameObject:
   m_ObjectHideFlags: 0
