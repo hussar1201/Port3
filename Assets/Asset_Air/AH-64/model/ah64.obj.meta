@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 7a4ac2c431580c340ad8a1db5b3b5fbc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: body
+    100004: gun
+    100006: rocket_1_body.003
+    100008: rocket_2_body.004
+    100010: rocket_3_body.005
+    100012: rocket_4_body.001
+    100014: rocket_5_body.006
+    100016: rocket_6_body.007
+    100018: rocket_7_body.008
+    100020: rocket_8_body.009
+    100022: rotor
+    100024: tail_rotor
+    100026: tail_rotor2
+    100028: windows
+    400000: //RootNode
+    400002: body
+    400004: gun
+    400006: rocket_1_body.003
+    400008: rocket_2_body.004
+    400010: rocket_3_body.005
+    400012: rocket_4_body.001
+    400014: rocket_5_body.006
+    400016: rocket_6_body.007
+    400018: rocket_7_body.008
+    400020: rocket_8_body.009
+    400022: rotor
+    400024: tail_rotor
+    400026: tail_rotor2
+    400028: windows
+    2100000: bodyMat
+    2100002: gunMat
+    2100004: rocket_1_body.003Mat
+    2100006: rocket_2_body.004Mat
+    2100008: rocket_3_body.005Mat
+    2100010: rocket_4_body.001Mat
+    2100012: rocket_5_body.006Mat
+    2100014: rocket_6_body.007Mat
+    2100016: rocket_7_body.008Mat
+    2100018: rocket_8_body.009Mat
+    2100020: rotorMat
+    2100022: tail_rotorMat
+    2100024: tail_rotor2Mat
+    2100026: windowsMat
+    2300000: body
+    2300002: gun
+    2300004: rocket_1_body.003
+    2300006: rocket_2_body.004
+    2300008: rocket_3_body.005
+    2300010: rocket_4_body.001
+    2300012: rocket_5_body.006
+    2300014: rocket_6_body.007
+    2300016: rocket_7_body.008
+    2300018: rocket_8_body.009
+    2300020: rotor
+    2300022: tail_rotor
+    2300024: tail_rotor2
+    2300026: windows
+    3300000: body
+    3300002: gun
+    3300004: rocket_1_body.003
+    3300006: rocket_2_body.004
+    3300008: rocket_3_body.005
+    3300010: rocket_4_body.001
+    3300012: rocket_5_body.006
+    3300014: rocket_6_body.007
+    3300016: rocket_7_body.008
+    3300018: rocket_8_body.009
+    3300020: rotor
+    3300022: tail_rotor
+    3300024: tail_rotor2
+    3300026: windows
+    4300000: body
+    4300002: gun
+    4300004: rocket_1_body.003
+    4300006: rocket_2_body.004
+    4300008: rocket_3_body.005
+    4300010: rocket_4_body.001
+    4300012: rocket_5_body.006
+    4300014: rocket_6_body.007
+    4300016: rocket_7_body.008
+    4300018: rocket_8_body.009
+    4300020: rotor
+    4300022: tail_rotor
+    4300024: tail_rotor2
+    4300026: windows
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
