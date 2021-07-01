@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy_Nav : MonoBehaviour
 {
     private NavMeshAgent pathFinder;
-    private PlayerController pc;
+    public PlayerController pc;
     private Transform transform_parent;
 
     public float speed {
@@ -21,7 +21,7 @@ public class Enemy_Nav : MonoBehaviour
     {
         pathFinder = GetComponent<NavMeshAgent>();
         transform_parent = GetComponentInParent<Transform>();
-        Debug.Log(transform_parent);
+  
         pc = FindObjectOfType<PlayerController>();
         speed = pathFinder.speed;       
     }
@@ -36,7 +36,9 @@ public class Enemy_Nav : MonoBehaviour
         else stopped = false;
       
         pathFinder.SetDestination(pc.transform.position);
-        transform_parent.LookAt(pc.transform);      
+        transform_parent.LookAt(pc.transform);
+
+        
 
         
     }
