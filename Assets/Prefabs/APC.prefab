@@ -2614,8 +2614,6 @@ GameObject:
   - component: {fileID: 4855655001752987511}
   - component: {fileID: 4860495526981393186}
   - component: {fileID: 4860495526981393187}
-  - component: {fileID: 27478378}
-  - component: {fileID: 27478381}
   m_Layer: 6
   m_Name: APC
   m_TagString: Untagged
@@ -2675,40 +2673,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.018618, y: 1.7813723, z: 5.059265}
   m_Center: {x: -0.007601738, y: 1.4945177, z: 0.40288544}
---- !u!195 &27478378
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861397646507113923}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: -0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &27478381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861397646507113923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5195a12c634c40eea3ad0c04e4bddc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4861419867057665217
 GameObject:
   m_ObjectHideFlags: 0

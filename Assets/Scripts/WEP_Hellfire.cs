@@ -12,7 +12,7 @@ public class WEP_Hellfire : MonoBehaviour
 
     private bool fired = false;
     private GameObject target;
-    private float time_before_tracking = .1f;
+    private float time_before_tracking = .3f;
     private float time_after_launched = 0f;
     private Vector3 point_start;
     private bool tgt_set;
@@ -32,7 +32,7 @@ public class WEP_Hellfire : MonoBehaviour
         this.target = target;
         fired = true;
         effect.SetActive(true);
-        transform.SetParent(target.transform);
+        transform.SetParent(GameManager.instance.transform);
         point_start = transform.position;
     }
         

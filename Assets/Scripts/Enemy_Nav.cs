@@ -37,8 +37,7 @@ public class Enemy_Nav : MonoBehaviour
         else stopped = false;
       
         pathFinder.SetDestination(pc.transform.position);
-        transform_parent.LookAt(pc.transform.position);
-
+        transform_parent.LookAt(pc.transform);
         
 
         

@@ -5,11 +5,9 @@ using UnityEngine;
 public class Rotor : MonoBehaviour
 {
 
-    public float speed
-    {
-        get; set;
-    }
-
+    
+    private const float speed_normal = 1000f;
+    private float speed;
     public int mode_rotate;
 
 
@@ -18,7 +16,7 @@ public class Rotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 1200f;
+        speed = speed_normal;
 
         if (mode_rotate == 0) rotation = Vector3.left;
         if (mode_rotate == 1) rotation = Vector3.up;
@@ -27,10 +25,10 @@ public class Rotor : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        transform.Rotate(rotation * speed *Time.deltaTime);
+    {              
         
-
+        speed = speed_normal * (1 + Mathf.Abs(PlayerInput.instance.move));
+        transform.Rotate(rotation * speed *Time.deltaTime);
 
     }
 }

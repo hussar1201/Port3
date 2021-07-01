@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        transform.position += new Vector3(0f, .01f, 0f) * direction_y;
-        direction_y *= -1;
+        //transform.position += new Vector3(0f, .01f, 0f) * direction_y;
+        //direction_y *= -1;
 
         Quaternion rotation_Y;
 
