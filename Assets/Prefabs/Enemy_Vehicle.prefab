@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_Nav: {fileID: 3426729626015734836}
   enemy_cannon: {fileID: 3426325358589543284}
-  Bullet: {fileID: 3141501286977306411, guid: 319b43be4b63c42c7875affb138dfcc8, type: 3}
+  Bullet: {fileID: 3697651011645804854, guid: cc892747ae120447795bb258e4340759, type: 3}
 --- !u!65 &665757378
 BoxCollider:
   m_ObjectHideFlags: 0

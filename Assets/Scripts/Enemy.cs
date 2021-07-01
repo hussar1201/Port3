@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private ParticleSystem ps;
     private bool flag_firing;
 
-    private float time_interval_fire = 2f;
+    private float time_interval_fire = 5f;
     private float time_after_fire = 0f;
 
 
