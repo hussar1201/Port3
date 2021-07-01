@@ -16,6 +16,8 @@ public class Enemy_Nav : MonoBehaviour
     }
 
     public bool stopped = false;
+
+
     // Start is called before the first frame update
     void Start()
     {

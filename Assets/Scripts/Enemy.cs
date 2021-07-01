@@ -48,6 +48,8 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
 
+        
+
         if (e_Nav.stopped == false)
         {
 
