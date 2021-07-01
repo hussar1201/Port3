@@ -20,6 +20,7 @@ public class Enemy_Turret : MonoBehaviour
     {
 
         enemy_pos_recalculated = new Vector3(enemy_Nav.pc.transform.position.x, transform.position.y, enemy_Nav.pc.transform.position.z);
+
         transform.LookAt(enemy_pos_recalculated);
         enemy_cannon.transform.LookAt(enemy_Nav.pc.transform);       
     }

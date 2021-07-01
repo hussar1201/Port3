@@ -12,7 +12,10 @@ public class Enemy : MonoBehaviour
     private Vector3 pos_Nav_before;
     private Enemy_Turret turret;
     private ParticleSystem ps;
+    private bool flag_firing;
 
+    private float time_interval_fire = 2f;
+    private float time_after_fire = 0f;
 
 
     public Vector3 enemy_pos_for_body
@@ -36,6 +39,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         speed = e_Nav.speed * 0.95f;
         turret = GetComponentInChildren<Enemy_Turret>();
+        
+  
 
     }
 
@@ -52,34 +57,32 @@ public class Enemy : MonoBehaviour
 
             //transform.position += Vector3.forward * speed * Time.deltaTime;
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
-
             transform.LookAt(enemy_pos_for_body);
-            ps.gameObject.active = true;
-            StopCoroutine(Fire());
+            ps.gameObject.active = true;                          
 
         }
+
+
         else if (e_Nav.stopped == true)
         {
+            
+            flag_firing = true;
 
-            StartCoroutine(Fire());
+            if(time_after_fire >= time_interval_fire)
+            {
+                time_after_fire = 0f;
+                turret.Fire();
+            }
             ps.gameObject.active = false;
             rb.velocity = Vector3.zero;
             rb.position = rb.position + Vector3.zero;
-
         }
-
+        time_after_fire += Time.deltaTime;
     }
 
-
-
-    IEnumerator Fire()
-    {
-
-        //turret.Fire();
-
-        yield return new WaitForSeconds(3f);
-
-    }
+  
+      
+ 
 
     
 
