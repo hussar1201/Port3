@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     private Rigidbody rb;
     private float speed;
     private Vector3 pos_Nav_before;
+    private Enemy_Turret turret;
+    private ParticleSystem ps;
+
+
+
     public Vector3 enemy_pos_for_body
     {
         get;
@@ -27,8 +32,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps = GetComponentInChildren<ParticleSystem>();
         rb = GetComponent<Rigidbody>();
         speed = e_Nav.speed * 0.95f;
+        turret = GetComponentInChildren<Enemy_Turret>();
 
     }
 
@@ -47,26 +54,32 @@ public class Enemy : MonoBehaviour
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
 
             transform.LookAt(enemy_pos_for_body);
-
-            
+            ps.gameObject.active = true;
+            StopCoroutine(Fire());
 
         }
         else if (e_Nav.stopped == true)
         {
 
+            StartCoroutine(Fire());
+            ps.gameObject.active = false;
             rb.velocity = Vector3.zero;
             rb.position = rb.position + Vector3.zero;
 
         }
 
-
-
-
-
-
-
     }
 
+
+
+    IEnumerator Fire()
+    {
+
+        //turret.Fire();
+
+        yield return new WaitForSeconds(3f);
+
+    }
 
     
 

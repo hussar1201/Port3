@@ -31,12 +31,11 @@ public class Enemy_Nav : MonoBehaviour
     {
         pathFinder.isStopped = false;
 
-
         if (pathFinder.velocity == Vector3.zero) { stopped = true;}
         else stopped = false;
       
         pathFinder.SetDestination(pc.transform.position);
-        transform_parent.LookAt(pc.transform);
+        transform_parent.LookAt(pc.transform.position);
 
         
 
