@@ -6,7 +6,7 @@ public class RDR_Tracking : MonoBehaviour
 {
     public LayerMask lm;
         
-    private List<RDR_TrackingInfo> list_frontTGT = new List<RDR_TrackingInfo>();
+    //private List<RDR_TrackingInfo> list_frontTGT = new List<RDR_TrackingInfo>();
     //private HeliController heliCon;
 
     private Screen_RDR_Tracking screen_RDR_Tracking;
@@ -35,7 +35,6 @@ public class RDR_Tracking : MonoBehaviour
            gameObject.transform.localScale/2, Quaternion.identity, lm);
 
         size_of_x = GetComponent<Collider>().transform.localScale.x;
-        Debug.Log(size_of_x);
 
         cnt = hitColliders.Length;
 
@@ -47,6 +46,8 @@ public class RDR_Tracking : MonoBehaviour
     void Update()
     {
         lm = LayerMask.GetMask(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
+        Debug.Log(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
+
 
         time_scan += Time.deltaTime;
 
@@ -77,16 +78,12 @@ public class RDR_Tracking : MonoBehaviour
                     tgt.id_tgt = hitColliders[i].GetInstanceID();
 
                     tgt.pos = new Vector3(x * rate_b, y + 7f, 0f);
-                    list_frontTGT.Add(tgt);
+
+                    RDRController.instance.list_frontTGT.Add(tgt);                   
                 }
-            }
+            }               
 
-
-            screen_RDR_Tracking.AcquiredTGT(list_frontTGT);
-         
-
-            time_scan = 0f;
-            list_frontTGT = new List<RDR_TrackingInfo>();
+            time_scan = 0f;          
         }
     }
 

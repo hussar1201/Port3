@@ -16,7 +16,7 @@ public class Screen_RDR_Tracking : MonoBehaviour
     private float interval_reset = 0.3f;
     private float time = 0f;
     private HashSet<int> set_ID = new HashSet<int>();
-
+    
 
     private void Update()
     {
@@ -43,24 +43,27 @@ public class Screen_RDR_Tracking : MonoBehaviour
 
                 set_ID.Add(list_frontTGT[i].id_tgt);
                 GameObject tmp = Instantiate(img_point_enemy, list_frontTGT[i].pos, Quaternion.identity);                                
-         
-                WeaponManager.instance.target = list_frontTGT[i].tgt;         
-                              
+
+                RDRController.instance.target = list_frontTGT[i].tgt;
+
                 tmp.transform.SetParent(EntriesRoot);
                 
                 tmp.transform.position = EntriesRoot.position + list_frontTGT[i].pos;
              
-
                 Destroy(tmp, .4f);
             }
         }
     }
+
 
     public void ChangeTypeOfSearch()
     {
 
         RDRController.instance.ChangeTypeOfSearch();
         text_SearchMode.text = "SEARCH MODE : " + RDRController.instance.typesTGT[RDRController.instance.type_of_search];
+        RDRController.instance.target = null;
+        RDRController.instance.target_before = null;
+
     }
 
 
