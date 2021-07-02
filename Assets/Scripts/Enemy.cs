@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         if (e_Nav.stopped == false)
         {
 
+         
             Vector3 heading = e_Nav.transform.position - transform.position;
 
             rb.MovePosition(transform.position + (heading * speed * Time.deltaTime));
@@ -60,8 +61,8 @@ public class Enemy : MonoBehaviour
             //transform.position += Vector3.forward * speed * Time.deltaTime;
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
             transform.LookAt(enemy_pos_for_body);
-            ps.gameObject.active = true;                          
-
+            ps.gameObject.active = true;
+       
         }
 
 

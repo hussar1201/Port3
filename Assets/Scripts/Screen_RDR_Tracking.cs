@@ -28,7 +28,8 @@ public class Screen_RDR_Tracking : MonoBehaviour
 
 
     public void AcquiredTGT(List<RDR_TrackingInfo> list_frontTGT)
-    {
+    {        
+
         for (int i = 0; i < list_frontTGT.Count; i++)
         {           
 
