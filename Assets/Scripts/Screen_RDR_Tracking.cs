@@ -9,11 +9,14 @@ public class Screen_RDR_Tracking : MonoBehaviour
     public GameObject img_point_enemy;
     public GameObject pos_of_Camera;
 
+    public Text text_SearchMode;
+
     public Transform EntriesRoot;
 
     private float interval_reset = 0.3f;
     private float time = 0f;
     private HashSet<int> set_ID = new HashSet<int>();
+
 
     private void Update()
     {
@@ -51,6 +54,13 @@ public class Screen_RDR_Tracking : MonoBehaviour
                 Destroy(tmp, .4f);
             }
         }
+    }
+
+    public void ChangeTypeOfSearch()
+    {
+
+        RDRController.instance.ChangeTypeOfSearch();
+        text_SearchMode.text = "SEARCH MODE : " + RDRController.instance.typesTGT[RDRController.instance.type_of_search];
     }
 
 

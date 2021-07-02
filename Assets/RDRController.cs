@@ -6,7 +6,9 @@ public class RDRController : MonoBehaviour
 {
     private static RDRController m_instance;
 
-    public int type_of_search = 2;
+    public string[] typesTGT = {"AAA", "TANK", "APC"};
+    public int type_of_search = 0;
+
 
 
     public static RDRController instance
@@ -28,9 +30,22 @@ public class RDRController : MonoBehaviour
         {
             Destroy(gameObject);
             return;
-        }       
+        }
+
 
 
     }
+
+
+
+    public void ChangeTypeOfSearch()
+    {
+         
+        if (++type_of_search == typesTGT.Length) type_of_search = 0;
+        Debug.Log(typesTGT[type_of_search]);
+          
+
+    }
+
 
 }

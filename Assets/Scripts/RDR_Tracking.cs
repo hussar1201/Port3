@@ -20,14 +20,13 @@ public class RDR_Tracking : MonoBehaviour
     float interval_scan = 0.3f;
     float time_scan = 0f;
 
-    string[] typeOfTgt = { "AAA", "TANK", "APC" };
 
     // Start is called before the first frame update
     void Start()
     {
 
         //???????? ?????? ???? ???? ????
-        lm = LayerMask.GetMask(typeOfTgt[RDRController.instance.type_of_search]);
+        lm = LayerMask.GetMask(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
 
         screen_RDR_Tracking = FindObjectOfType<Screen_RDR_Tracking>();
         
@@ -47,6 +46,7 @@ public class RDR_Tracking : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
+        lm = LayerMask.GetMask(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
 
         time_scan += Time.deltaTime;
 

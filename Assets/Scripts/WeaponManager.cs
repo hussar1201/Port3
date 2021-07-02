@@ -14,7 +14,9 @@ public class WeaponManager : MonoBehaviour
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
-    public bool game_on = false;    
+    public bool game_on = false;
+
+    public List<int> list_cnt_Ammo = new List<int>();
 
     public GameObject target;
     public GameObject target_before;
@@ -84,6 +86,10 @@ public class WeaponManager : MonoBehaviour
         if (GameManager.instance.game_on == null) game_on = false;
         else game_on = true;
         target_before = null;
+
+        list_cnt_Ammo.Add(num_hellfires);
+        list_cnt_Ammo.Add(num_rockets);
+
     }
 
 
@@ -128,6 +134,11 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+        list_cnt_Ammo[0] = num_hellfires;
+        list_cnt_Ammo[1] = num_rockets;
+
+
+        UIManager.instance.SetUI_Wep();
 
     }
 
