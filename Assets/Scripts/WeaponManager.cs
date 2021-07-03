@@ -104,19 +104,31 @@ public class WeaponManager : MonoBehaviour
 
         if (target != null)
         {
-             target_sign_locked = target.gameObject.GetComponentInChildren<UI_HeadToCamera>();
-             if(target_sign_locked != null) target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            target_sign_locked = target.gameObject.GetComponentInChildren<UI_HeadToCamera>();
+            if (target_sign_locked != null && target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled == false)
+            {
+                Debug.Log("IN1");              
+                
+                if(target_before!=target) SoundManager.instance.playOneShotAudio(SoundManager.sounds.targetlocked);
+
+                target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;               
+            }
         }
 
+        /* RDRController 사용전 필요했던 코드
         if(target_before != null && target_before != target)
         {
             target_before_sign_locked = target_before.gameObject.GetComponentInChildren<UI_HeadToCamera>();
-            if (target_sign_locked != null) target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            if (target_sign_locked != null) 
+            {               
+                target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
             if (target_before_sign_locked != null) target_before_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
+        
+        */
 
         target_before = target;
-
 
         if (PlayerInput.instance.fire_msl && num_hellfires > 0 &&
             Time.time > lastfiretime_hellfire + interval_time_hellfire)
@@ -124,12 +136,12 @@ public class WeaponManager : MonoBehaviour
             Debug.Log(target);
 
             if (target == null) return;
- 
 
             for (int i = 0; i < hardPoint_armed_hellfire.Count;i++)
             {
                 if (hardPoint_armed_hellfire[i].Fire(target) && target.gameObject.activeInHierarchy)
                 {
+                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.engage);
                     lastfiretime_hellfire = Time.time;
                     num_hellfires--;
                     target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;                   

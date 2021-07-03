@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f30bb18c25c9334c862bafe9258b69d
+guid: 34b45274bee17c041bb60b418e3b7f70
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - The Boardy
+  - Queen Dea Book
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

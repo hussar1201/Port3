@@ -58,7 +58,6 @@ public class RDRController : MonoBehaviour
             time_scan = 0f;
             list_frontTGT.Clear();
         }
-
     }
 
 
