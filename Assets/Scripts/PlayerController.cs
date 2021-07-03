@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
         //transform.position += new Vector3(0f, .01f, 0f) * direction_y;
         //direction_y *= -1;
-
         Quaternion rotation_Y;
 
         //zInput = Input.GetAxis("Vertical");
@@ -62,8 +61,7 @@ public class PlayerController : MonoBehaviour
         if (xInput == 0f) rb.velocity = (transform.forward * speed * zInput);
         else rb.velocity = (transform.forward * speed * zInput) + (transform.right * speed / 5 * xInput);
 
-        if (xInput == 0f && zInput == 0) rb.velocity = new Vector3(0, 0, 0);
-        
+        if (xInput == 0f && zInput == 0) rb.velocity = new Vector3(0, 0, 0);     
 
     }
 

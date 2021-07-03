@@ -20,11 +20,9 @@ public class RDR_Tracking : MonoBehaviour
     float interval_scan = 0.3f;
     float time_scan = 0f;
 
-
     // Start is called before the first frame update
     void Start()
     {
-
         //???????? ?????? ???? ???? ????
         lm = LayerMask.GetMask(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
 
@@ -37,18 +35,13 @@ public class RDR_Tracking : MonoBehaviour
         size_of_x = GetComponent<Collider>().transform.localScale.x;
 
         cnt = hitColliders.Length;
-
-  
-
     }
 
     // Update is called once per frame  
     void Update()
     {
         lm = LayerMask.GetMask(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
-        Debug.Log(RDRController.instance.typesTGT[RDRController.instance.type_of_search]);
-
-
+        
         time_scan += Time.deltaTime;
 
         if (time_scan >= interval_scan)
@@ -57,8 +50,6 @@ public class RDR_Tracking : MonoBehaviour
             hitColliders =
                 Physics.OverlapBox(gameObject.transform.position,
                 gameObject.transform.localScale / 2, Quaternion.identity, lm);
-
-
 
             if (cnt != hitColliders.Length) cnt = hitColliders.Length;
 
