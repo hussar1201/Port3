@@ -14,16 +14,13 @@ public class WeaponManager : MonoBehaviour
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
-    public bool game_on = false;
-
+    
     public List<int> list_cnt_Ammo = new List<int>();
 
     public GameObject target;
     public GameObject target_before;
     public UI_HeadToCamera target_sign_locked;
     public UI_HeadToCamera target_before_sign_locked;
-
-
 
     private List<WEP_hardpoint> hardPoint_armed_hellfire = new List<WEP_hardpoint>();
     private List<WEP_hardpoint> hardPoint_armed_rocket = new List<WEP_hardpoint>();
@@ -68,6 +65,7 @@ public class WeaponManager : MonoBehaviour
     private void Start()
     {
         
+
         for (int i = 0; i < arr_hardPoint.Length; i++)
         {
             switch (arr_hardPoint[i].wep_set)
@@ -87,19 +85,23 @@ public class WeaponManager : MonoBehaviour
         }
         
         lastfiretime_hellfire = Time.time;
-        if (GameManager.instance.game_on == null) game_on = false;
-        else game_on = true;
+
         target_before = null;
 
         list_cnt_Ammo.Add(num_hellfires);
         list_cnt_Ammo.Add(num_rockets);
+
+        Debug.Log(list_cnt_Ammo[0]);
+        Debug.Log(list_cnt_Ammo[1]);
+
 
     }
 
 
     private void Update()
     {
-        if (!game_on) return;
+
+        if (!GameManager.instance.game_on) return;
         target = RDRController.instance.target;
 
         if (target != null)
@@ -144,22 +146,32 @@ public class WeaponManager : MonoBehaviour
                     SoundManager.instance.playOneShotAudio(SoundManager.sounds.engage);
                     lastfiretime_hellfire = Time.time;
                     num_hellfires--;
-                    target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;                   
+                    list_cnt_Ammo[0] = num_hellfires;
+                    target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    UIManager.instance.SetUI_Wep();
                     break;
                 }
             }
         }
 
-        list_cnt_Ammo[0] = num_hellfires;
-        list_cnt_Ammo[1] = num_rockets;
+          /*
+            list_cnt_Ammo[1] = num_rockets;
+            UIManager.instance.SetUI_Wep();
+          */
 
-        UIManager.instance.SetUI_Wep();
 
     }
 
     public void ChangeSet(int num)
     {
         arr_hardPoint[num].ChangeSet();
+        GameManager.instance.armset[num] = arr_hardPoint[num].wep_set;
+        
+        for(int i = 0;i< GameManager.instance.armset.Length;i++)
+        {
+            Debug.Log(i + " : " + GameManager.instance.armset[num]);
+        }
+
     }
 
 

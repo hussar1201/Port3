@@ -28,6 +28,7 @@ public class WEP_hardpoint : MonoBehaviour
         {
             arr_pack[i].SetActive(false);
         }
+        
         arr_pack[wep_set].SetActive(true);
         wep_pack = GetComponentInChildren<Projectilepack>();      
     }

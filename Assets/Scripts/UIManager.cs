@@ -31,13 +31,11 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
     }
 
     public void SetUI_Wep()
     {
-        string tmp = "";       
-
+        string tmp = "";
         for(int i=0;i< WeaponManager.instance.list_cnt_Ammo.Count; i++)
         {
             tmp += "" + WeaponManager.instance.list_cnt_Ammo[i] + "\n\n";

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArmManager : MonoBehaviour
 {
@@ -31,14 +32,21 @@ public class ArmManager : MonoBehaviour
     }
 
     public void OnBtnWepClicked(int num)
-    {
-        WeaponManager.instance.ChangeSet(num);
+    {      
+        GameManager.instance.ChangeSet(num);
         for (int i = 0; i < btn_wep.Length; i++)
-        {
-            
+        {           
             btn_wep[i].ChangeImg(num);           
         }
 
+    }
+
+
+    public void StartGame()
+    {
+        PlayerPrefs.SetInt("value_armset0", GameManager.instance.armset[0]);
+        PlayerPrefs.SetInt("value_armset1", GameManager.instance.armset[1]);
+        SceneManager.LoadScene("Game_Lv1");
     }
 
 

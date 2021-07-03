@@ -11,7 +11,6 @@ public class Rotor : MonoBehaviour
     public int mode_rotate;
     bool flag_speedmeter = false;
 
-
     private Vector3 rotation;
 
     // Start is called before the first frame update
@@ -27,7 +26,6 @@ public class Rotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         speed = speed_normal * (1 + Mathf.Abs(PlayerInput.instance.move));
         if (mode_rotate == 0)
         {

@@ -21,36 +21,52 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if(m_instance==null)
+            if (m_instance == null)
             {
                 m_instance = FindObjectOfType<GameManager>();
             }
-            
             return m_instance;
         }
     }
 
     private void Awake()
     {
-        if(instance!=this)
+        if (instance != this)
         {
             Destroy(gameObject);
             return;
-        }      
-
+        }
+        
+        ChopperManager tmp = FindObjectOfType<ChopperManager>();
+        if (tmp == null)
+        {
+            game_on = true;
+            if (PlayerPrefs.HasKey("value_armset0")) armset[0] = PlayerPrefs.GetInt("value_armset0");
+            if (PlayerPrefs.HasKey("value_armset1")) armset[1] = PlayerPrefs.GetInt("value_armset1");
+        }
+        else
+        {
+            PlayerPrefs.DeleteAll();
+            armset[0] = 0;
+            armset[1] = 1;
+        }        
+        
     }
 
-
+    public void ChangeSet(int num)
+    {
+        WeaponManager.instance.ChangeSet(num);               
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

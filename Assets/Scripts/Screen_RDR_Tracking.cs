@@ -59,7 +59,6 @@ public class Screen_RDR_Tracking : MonoBehaviour
 
     public void ChangeTypeOfSearch()
     {
-
         RDRController.instance.ChangeTypeOfSearch();
         text_SearchMode.text = "[SEARCH MODE] " + RDRController.instance.typesTGT[RDRController.instance.type_of_search];
         RDRController.instance.target = null;
