@@ -14,6 +14,7 @@ public class WeaponManager : MonoBehaviour
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
+    public Transform[] pos_fall;
     
     public List<int> list_cnt_Ammo = new List<int>();
 
@@ -94,6 +95,7 @@ public class WeaponManager : MonoBehaviour
         Debug.Log(list_cnt_Ammo[0]);
         Debug.Log(list_cnt_Ammo[1]);
 
+        if(UIManager.instance!=null) UIManager.instance.SetUI_Wep();
 
     }
 
