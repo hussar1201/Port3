@@ -111,10 +111,7 @@ public class WeaponManager : MonoBehaviour
             target_sign_locked = target.gameObject.GetComponentInChildren<UI_HeadToCamera>();
             if (target_sign_locked != null && target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled == false)
             {
-                Debug.Log("IN1");              
-                
                 if(target_before!=target) SoundManager.instance.playOneShotAudio(SoundManager.sounds.targetlocked);
-
                 target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;               
             }
         }

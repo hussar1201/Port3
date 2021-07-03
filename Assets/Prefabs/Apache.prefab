@@ -989,6 +989,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1041,6 +1049,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher_R
@@ -1049,10 +1065,22 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5011700877192580997, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047167406466763006, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
     - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: ps
       value: 
       objectReference: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56, type: 3}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_AngularDrag
       value: 50
@@ -1060,6 +1088,10 @@ PrefabInstance:
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239194685022519987, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8734132728292467298, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
@@ -1086,6 +1118,14 @@ PrefabInstance:
     - target: {fileID: 855137808648778509, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
@@ -1139,11 +1179,31 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher_L
       objectReference: {fileID: 0}
     - target: {fileID: 4594337081329411068, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011700877192580997, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047167406466763006, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
@@ -1154,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239194685022519987, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
@@ -1176,6 +1240,14 @@ PrefabInstance:
     - target: {fileID: 855137808648778509, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
@@ -1229,11 +1301,31 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher_L
       objectReference: {fileID: 0}
     - target: {fileID: 4594337081329411068, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011700877192580997, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047167406466763006, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
@@ -1244,6 +1336,10 @@ PrefabInstance:
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239194685022519987, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
@@ -1453,6 +1549,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1505,11 +1609,31 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher_R
       objectReference: {fileID: 0}
     - target: {fileID: 4594337081329411068, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011700877192580997, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047167406466763006, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
@@ -1520,6 +1644,10 @@ PrefabInstance:
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239194685022519987, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}

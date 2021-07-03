@@ -52,7 +52,6 @@ public class Enemy : MonoBehaviour
 
         if (e_Nav.stopped == false)
         {
-
          
             Vector3 heading = e_Nav.transform.position - transform.position;
 
@@ -61,7 +60,7 @@ public class Enemy : MonoBehaviour
             //transform.position += Vector3.forward * speed * Time.deltaTime;
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
             transform.LookAt(enemy_pos_for_body);
-            ps.gameObject.active = true;
+            ps.gameObject.SetActive(true);           
        
         }
 
@@ -76,7 +75,7 @@ public class Enemy : MonoBehaviour
                 time_after_fire = 0f;
                 turret.Fire();
             }
-            ps.gameObject.active = false;
+            ps.gameObject.SetActive(false);            
             rb.velocity = Vector3.zero;
             rb.position = rb.position + Vector3.zero;
         }
