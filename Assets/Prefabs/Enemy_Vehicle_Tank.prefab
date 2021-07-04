@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 916570769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 1.74, z: 0.04}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 3039988956132531652}
   m_RootOrder: 19
@@ -153,18 +153,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 5531fe2f2a3731f44ab19636f371fd2a, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: e1c36fa40f4d273429b9a582289817c8, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.05, y: 5.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 2
+  m_SpriteSortPoint: 0
 --- !u!114 &916570771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_Nav: {fileID: 3036985990483222776}
   enemy_cannon: {fileID: 3037530717296410552}
-  Bullet: {fileID: 3697651011645804854, guid: cc892747ae120447795bb258e4340759, type: 3}
+  Bullet: {fileID: 2708013272300404508, guid: cc892747ae120447795bb258e4340759, type: 3}
   pos_bullet_start: {fileID: 408625640922637172}
 --- !u!136 &298571917090905881
 CapsuleCollider:
@@ -418,6 +418,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7087858809947201016, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
+    - {fileID: 7063897358048513286, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
+    - {fileID: 7072060890406300582, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
 --- !u!4 &751032347478387792 stripped
 Transform:
@@ -468,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756122407232148328, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_Interpolate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4756122407232148328, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_CollisionDetection
@@ -896,15 +898,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4760432757445352846, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 198
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4760432757445352846, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4760432757445352846, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4760432757445352846, guid: 87723c49af3ad4e2da463be74220d5b5, type: 3}
       propertyPath: m_LocalRotation.w

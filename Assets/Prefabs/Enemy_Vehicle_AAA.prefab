@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 580421353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.394, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2257858745885474699}
   m_RootOrder: 11
@@ -71,17 +71,17 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5531fe2f2a3731f44ab19636f371fd2a, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: e1c36fa40f4d273429b9a582289817c8, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!114 &580421356
 MonoBehaviour:
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 2044993065}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.278, z: 0.292}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 2257858745885474699}
   m_RootOrder: 12
@@ -165,7 +165,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5531fe2f2a3731f44ab19636f371fd2a, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -174,8 +174,8 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!65 &6723041862011660259
 BoxCollider:
@@ -330,9 +330,17 @@ PrefabInstance:
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6514122667894081360, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 2708013272300404508, guid: cc892747ae120447795bb258e4340759, type: 3}
+    - target: {fileID: 6514122667894081360, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
       propertyPath: enemy_Nav
       value: 
       objectReference: {fileID: 4879593574770049705}
+    - target: {fileID: 6514122667894081360, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
+      propertyPath: enemy_cannon
+      value: 
+      objectReference: {fileID: 7317400542123655046}
     - target: {fileID: 6514122667894081360, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
       propertyPath: pos_bullet_start
       value: 
@@ -347,6 +355,11 @@ GameObject:
 --- !u!4 &2257858745885474699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 172500508373324332, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
+  m_PrefabInstance: {fileID: 2103566806129683879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7317400542123655046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8700391372960453153, guid: a3e032beb5a30431c90cb96441d0f038, type: 3}
   m_PrefabInstance: {fileID: 2103566806129683879}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2103566804309897019 stripped
