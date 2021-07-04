@@ -430,7 +430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6588820808134537689}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 4.85, y: 23.01, z: 17.14}
+  m_LocalPosition: {x: 4.85, y: 21.48, z: 17.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6593076633578296122}
@@ -448,9 +448,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 30
-  m_SpotAngle: 140
+  m_Intensity: 5
+  m_Range: 15
+  m_SpotAngle: 127
   m_InnerSpotAngle: 7
   m_CookieSize: 10
   m_Shadows:
@@ -490,7 +490,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.5
+  m_BounceIntensity: 1.2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -2447,6 +2447,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: hellfire_launcher
       objectReference: {fileID: 0}
+    - target: {fileID: 5603873974842395331, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
 --- !u!4 &7763914371535966240 stripped
@@ -3142,6 +3150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6593076633578296122}
     m_Modifications:
+    - target: {fileID: 3258944172137228251, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -3189,6 +3201,14 @@ PrefabInstance:
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761944780124307598, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}

@@ -13,6 +13,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode_rotate: 0
+--- !u!114 &1227778975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364354025805433497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb03a40276a80544ad907c947a426f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode_rotate: 0
+--- !u!114 &1409016500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364354025876935088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb03a40276a80544ad907c947a426f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode_rotate: 1
 --- !u!1 &706814315144682087
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,6 +49,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706814315144682080}
   - component: {fileID: 5953769500039854375}
+  - component: {fileID: 1859069776}
   m_Layer: 0
   m_Name: Apache_Static
   m_TagString: Untagged
@@ -67,6 +94,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1859069776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706814315144682087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6804b6b3ed455a4ba0f4ffa82a0dc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1252389875807295806
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4070083ab3c961444995794ec2311170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos_of_packs: []
+  prefab: {fileID: 0}
 --- !u!1 &5953769498980660688
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4070083ab3c961444995794ec2311170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos_of_packs: []
+  prefab: {fileID: 0}
 --- !u!1001 &706814313918843445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,6 +564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ad948c345f19249800ff4047bf9811, type: 3}
+--- !u!1 &364354025876935088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ad948c345f19249800ff4047bf9811, type: 3}
+  m_PrefabInstance: {fileID: 706814314214714593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1028406909919595274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97ad948c345f19249800ff4047bf9811, type: 3}
@@ -644,14 +692,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
   m_PrefabInstance: {fileID: 706814314275731400}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1748919901538246070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7959423231535043970, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
+  m_PrefabInstance: {fileID: 706814314275731400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &32650428732228939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 701687137712059011, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
   m_PrefabInstance: {fileID: 706814314275731400}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1748919901538246070 stripped
+--- !u!1 &364354025805433497 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -7959423231535043970, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
   m_PrefabInstance: {fileID: 706814314275731400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &706814314751495915
@@ -975,6 +1028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5953769498980660695}
     m_Modifications:
+    - target: {fileID: 3258944172137228251, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1023,10 +1080,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: hellfire_launcher_R
       objectReference: {fileID: 0}
+    - target: {fileID: 5603873974842395331, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: ps
       value: 
       objectReference: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56, type: 3}
+    - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761944780124307598, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
 --- !u!4 &7092833722898934362 stripped
@@ -1165,6 +1234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5953769498980660695}
     m_Modifications:
+    - target: {fileID: 3258944172137228251, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3516967581899152697, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1212,6 +1285,18 @@ PrefabInstance:
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
       value: hellfire_launcher_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603873974842395331, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639336686195035576, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761944780124307598, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
