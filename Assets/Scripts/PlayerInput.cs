@@ -46,9 +46,15 @@ public class PlayerInput : MonoBehaviour
         
     void Update()
     {
-        if (Input.GetKey(KeyCode.X)) { fire_msl = true;}
+        if (Input.GetKey(KeyCode.M)) fire_msl = true;
         else fire_msl = false;
 
+        if (Input.GetKey(KeyCode.G)) fire_gun = true; 
+        else fire_gun = false;
+
+        if (Input.GetKey(KeyCode.R)) fire_rocket = true; 
+        else fire_rocket = false;
+        
         if (mode_input.Equals("stick"))
         {
             move = joystick.Vertical;
