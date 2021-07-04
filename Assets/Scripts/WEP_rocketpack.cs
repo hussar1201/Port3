@@ -34,7 +34,7 @@ public class WEP_rocketpack : MonoBehaviour, Projectilepack
         flag_left = !flag_left;
         
         Transform tmp = Instantiate(prefab, pos_of_packs[i].position + pos_respawn_rocket, Quaternion.identity).transform;
-        SoundManager.instance.playOneShotAudio(SoundManager.sounds.rocket);
+        
         tmp.LookAt(WeaponManager.instance.pos_fall[2]);
 
         return true;

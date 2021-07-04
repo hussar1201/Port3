@@ -9,8 +9,8 @@ public class WeaponManager : MonoBehaviour
     public static int ROCKET_PER_PACKS = 64;
     public static int HELLFIRE_PER_PACKS = 8;
     private float interval_time_hellfire= 2f;
-    private float interval_time_rocket = 1f;
-    private float interval_time_gun = .5f;
+    private float interval_time_rocket = .5f;
+    private float interval_time_gun = .3f;
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
@@ -23,8 +23,11 @@ public class WeaponManager : MonoBehaviour
     public UI_HeadToCamera target_sign_locked;
     public UI_HeadToCamera target_before_sign_locked;
 
+
     private List<WEP_hardpoint> hardPoint_armed_hellfire = new List<WEP_hardpoint>();
     private List<WEP_hardpoint> hardPoint_armed_rocket = new List<WEP_hardpoint>();
+    private WEP_Cannon cannon;
+
 
     public int num_rockets
     {
@@ -59,6 +62,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         arr_hardPoint = GetComponentsInChildren<WEP_hardpoint>();
+        cannon = GetComponentInChildren<WEP_Cannon>();
         num_rockets = 0;
         num_hellfires = 0;
     }
@@ -134,8 +138,7 @@ public class WeaponManager : MonoBehaviour
         if (PlayerInput.instance.fire_msl && num_hellfires > 0 &&
             Time.time > lastfiretime_hellfire + interval_time_hellfire)
         {
-            Debug.Log(target);
-
+           
             if (target == null) return;
 
             for (int i = 0; i < hardPoint_armed_hellfire.Count;i++)
@@ -153,9 +156,36 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+        if (PlayerInput.instance.fire_rocket && num_rockets > 0 &&
+           Time.time > lastfiretime_rocket + interval_time_rocket)
+        {                      
+
+            for (int i = 0; i < hardPoint_armed_rocket.Count; i++)
+            {
+                if (hardPoint_armed_rocket[i].Fire(target))
+                {
+                    lastfiretime_rocket = Time.time;
+                    num_rockets --;
+                    list_cnt_Ammo[1] = num_rockets;
+                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.rocket);
+                    UIManager.instance.SetUI_Wep();               
+                    break;
+                }
+            }
+        }
+
+
+        if (PlayerInput.instance.fire_gun && Time.time > lastfiretime_gun + interval_time_gun)
+        {
+            lastfiretime_gun = Time.time;
+            cannon.Fire();
+        }
+
+
+
+
           /*
-            list_cnt_Ammo[1] = num_rockets;
-            UIManager.instance.SetUI_Wep();
+     
           */
 
 
