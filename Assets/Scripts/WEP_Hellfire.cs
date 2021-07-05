@@ -12,11 +12,14 @@ public class WEP_Hellfire : MonoBehaviour
 
     private bool fired = false;
     private GameObject target;
+    private Vector3 target_before;
+
+
     private float time_before_tracking = .2f;
     private float time_after_launched = 0f;
     private Vector3 point_start;
     private bool tgt_set;
-    public GameObject[] arr_Muzzle;
+    public GameObject arr_Muzzle;
     private Transform pos_pass;
 
     public void Start()
@@ -36,41 +39,53 @@ public class WEP_Hellfire : MonoBehaviour
     {
         this.target = target;
 
+        //GameManager.instance.transform.LookAt(target.transform);
         transform.SetParent(GameManager.instance.transform);
+        point_start = transform.position;
         fired = true;
-
-        for (int i = 0; i < arr_Muzzle.Length; i++) arr_Muzzle[i].SetActive(true);
-
-
+        target_before = target.transform.position;
+        arr_Muzzle.SetActive(true);
         //ps.Play();
-
 
     }
 
     void Update()
     {
         if (!fired) return;
-
         time_after_launched += Time.deltaTime;
         //StartCoroutine(Startflash());
 
-        
+
 
         if (time_before_tracking > time_after_launched)
         {
-
-            rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
+            rb.MovePosition(transform.position + 
+                Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);
+                        
+            //rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
         }
         else if (time_before_tracking <= time_after_launched)
         {
+            //rb.isKinematic = false;
+            Vector3 heading, los;
 
-            transform.LookAt(target.transform);
+            if (target != null)
+            {
+                heading = target.transform.position + new Vector3(0f, 1f, 0f);
+                los = heading - transform.position;
+                transform.LookAt(target.transform);
+                target_before = target.transform.position;
+            }
+            else
+            {
+                heading = target_before;
+                los = heading - transform.position;
+                transform.LookAt(heading);
+                Destroy(gameObject, 0.5f);
+            }
 
-            Vector3 heading = target.transform.position + new Vector3(0f, 1f, 0f);
-            Vector3 los = heading - transform.position;
+            rb.MovePosition(transform.position + los.normalized * speed * Time.deltaTime);
 
-            rb.MovePosition(transform.position + los.normalized * speed * Time.deltaTime);                       
-            
         }
 
     }
@@ -93,12 +108,16 @@ public class WEP_Hellfire : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //ps.Stop();
 
-        for (int i = 0; i < arr_Muzzle.Length; i++) arr_Muzzle[i].SetActive(false);
+        arr_Muzzle.SetActive(false);
 
-        Destroy(gameObject, 0.2f);
-        Destroy(collision.gameObject, 0.2f);
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy tmp = collision.gameObject.GetComponent<Enemy>();
+            tmp.Die();
+            SoundManager.instance.playOneShotAudio(SoundManager.sounds.tgtdestroyed, 2);
+        }
+        Destroy(gameObject, 0.5f);
     }
 
 

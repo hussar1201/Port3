@@ -42,7 +42,7 @@ public class Rotor : MonoBehaviour
                 if (speed_before > .5) SoundManager.instance.StopPlay(); 
                 else
                 {
-                    if(!SoundManager.instance.isPlaying()) SoundManager.instance.playOneShotAudio(SoundManager.sounds.rotor_lowpower);
+                    if(!SoundManager.instance.isPlaying()) SoundManager.instance.playOneShotAudio(SoundManager.sounds.rotor_lowpower,1);
                 }              
             }
             else
@@ -50,7 +50,7 @@ public class Rotor : MonoBehaviour
                 if (speed_before <= .5) SoundManager.instance.StopPlay();
                 else
                 {
-                    if (!SoundManager.instance.isPlaying()) SoundManager.instance.playOneShotAudio(SoundManager.sounds.rotor_highpower);
+                    if (!SoundManager.instance.isPlaying()) SoundManager.instance.playOneShotAudio(SoundManager.sounds.rotor_highpower, 1);
                 }                            
             }
         }

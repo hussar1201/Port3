@@ -8,7 +8,7 @@ public class WeaponManager : MonoBehaviour
     private WEP_hardpoint[] arr_hardPoint;
     public static int ROCKET_PER_PACKS = 64;
     public static int HELLFIRE_PER_PACKS = 8;
-    private float interval_time_hellfire= 2f;
+    private float interval_time_hellfire = 2.0f;
     private float interval_time_rocket = .5f;
     private float interval_time_gun = .3f;
     private float lastfiretime_hellfire;
@@ -27,6 +27,8 @@ public class WeaponManager : MonoBehaviour
     private List<WEP_hardpoint> hardPoint_armed_hellfire = new List<WEP_hardpoint>();
     private List<WEP_hardpoint> hardPoint_armed_rocket = new List<WEP_hardpoint>();
     private WEP_Cannon cannon;
+
+
 
 
     public int num_rockets
@@ -63,45 +65,15 @@ public class WeaponManager : MonoBehaviour
 
         arr_hardPoint = GetComponentsInChildren<WEP_hardpoint>();
         cannon = GetComponentInChildren<WEP_Cannon>();
-        num_rockets = 0;
-        num_hellfires = 0;
+
     }
 
     private void Start()
     {
-        
 
-        for (int i = 0; i < arr_hardPoint.Length; i++)
-        {
-            switch (arr_hardPoint[i].wep_set)
-            {
-                case 0:
-                    num_hellfires += HELLFIRE_PER_PACKS;
-                    arr_hardPoint[i].num_hellfires = HELLFIRE_PER_PACKS;
-                    hardPoint_armed_hellfire.Add(arr_hardPoint[i]);
-                    break;
-
-                case 1:
-                    num_rockets += ROCKET_PER_PACKS;
-                    arr_hardPoint[i].num_rockets = ROCKET_PER_PACKS;
-                    hardPoint_armed_rocket.Add(arr_hardPoint[i]);
-                    break;
-            }
-        }
-        
-        lastfiretime_hellfire = Time.time;
-
-        target_before = null;
-
-        list_cnt_Ammo.Add(num_hellfires);
-        list_cnt_Ammo.Add(num_rockets);
-
-        Debug.Log(list_cnt_Ammo[0]);
-        Debug.Log(list_cnt_Ammo[1]);
-
-        if(UIManager.instance!=null) UIManager.instance.SetUI_Wep();
-
-    }
+        ReloadAmmo();
+        lastfiretime_hellfire = lastfiretime_rocket = lastfiretime_gun = 0f;
+}
 
 
     private void Update()
@@ -115,12 +87,12 @@ public class WeaponManager : MonoBehaviour
             target_sign_locked = target.gameObject.GetComponentInChildren<UI_HeadToCamera>();
             if (target_sign_locked != null && target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled == false)
             {
-                if(target_before!=target) SoundManager.instance.playOneShotAudio(SoundManager.sounds.targetlocked);
+                if(target_before!=target) SoundManager.instance.playOneShotAudio(SoundManager.sounds.targetlocked,2);
                 target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;               
             }
         }
 
-        /* RDRController 사용전 필요했던 코드
+        
         if(target_before != null && target_before != target)
         {
             target_before_sign_locked = target_before.gameObject.GetComponentInChildren<UI_HeadToCamera>();
@@ -129,9 +101,8 @@ public class WeaponManager : MonoBehaviour
                 target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             }
             if (target_before_sign_locked != null) target_before_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        }
+        }        
         
-        */
 
         target_before = target;
 
@@ -145,7 +116,7 @@ public class WeaponManager : MonoBehaviour
             {
                 if (hardPoint_armed_hellfire[i].Fire(target) && target.gameObject.activeInHierarchy)
                 {
-                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.engage);
+                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.engage, 2);
                     lastfiretime_hellfire = Time.time;
                     num_hellfires--;
                     list_cnt_Ammo[0] = num_hellfires;
@@ -167,7 +138,7 @@ public class WeaponManager : MonoBehaviour
                     lastfiretime_rocket = Time.time;
                     num_rockets --;
                     list_cnt_Ammo[1] = num_rockets;
-                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.rocket);
+                    SoundManager.instance.playOneShotAudio(SoundManager.sounds.rocket,3);
                     UIManager.instance.SetUI_Wep();               
                     break;
                 }
@@ -180,13 +151,6 @@ public class WeaponManager : MonoBehaviour
             lastfiretime_gun = Time.time;
             cannon.Fire();
         }
-
-
-
-
-          /*
-     
-          */
 
 
     }
@@ -202,6 +166,48 @@ public class WeaponManager : MonoBehaviour
         }
 
     }
+
+
+
+
+    public void ReloadAmmo()
+    {
+        
+        list_cnt_Ammo.Clear();
+        num_rockets = 0;
+        num_hellfires = 0;
+
+        for (int i = 0; i < arr_hardPoint.Length; i++)
+        {
+            switch (arr_hardPoint[i].wep_set)
+            {
+                case 0:
+                    num_hellfires += HELLFIRE_PER_PACKS;
+                    arr_hardPoint[i].num_hellfires = HELLFIRE_PER_PACKS;
+                    hardPoint_armed_hellfire.Add(arr_hardPoint[i]);
+                    break;
+
+                case 1:
+                    num_rockets += ROCKET_PER_PACKS;
+                    arr_hardPoint[i].num_rockets = ROCKET_PER_PACKS;
+                    hardPoint_armed_rocket.Add(arr_hardPoint[i]);
+                    break;
+            }
+        }
+
+        lastfiretime_hellfire = Time.time;
+
+        target_before = null;
+
+        list_cnt_Ammo.Add(num_hellfires);
+        list_cnt_Ammo.Add(num_rockets);
+
+        if (UIManager.instance != null) UIManager.instance.SetUI_Wep();
+
+    }
+
+
+
 
 
     public void ResetTGT()

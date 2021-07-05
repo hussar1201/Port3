@@ -92,6 +92,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3516967581899152697}
     m_Modifications:
+    - target: {fileID: 1606433398155964993, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: arr_Muzzle
+      value: 
+      objectReference: {fileID: 2054747429600273593}
     - target: {fileID: 1643589245424675526, guid: 7aec64e3a8a348145a89391419289727, type: 3}
       propertyPath: m_Name
       value: Hellfire_MSL (1)
@@ -140,11 +144,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aec64e3a8a348145a89391419289727, type: 3}
 --- !u!4 &2807371796586276326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127074622426902652, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+  m_PrefabInstance: {fileID: 4283251858668606874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2054747429600273593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2878582162607698211, guid: 7aec64e3a8a348145a89391419289727, type: 3}
   m_PrefabInstance: {fileID: 4283251858668606874}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6343813190967836665
@@ -154,6 +171,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3516967581899152697}
     m_Modifications:
+    - target: {fileID: 1606433398155964993, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: arr_Muzzle
+      value: 
+      objectReference: {fileID: 9221972658161372890}
     - target: {fileID: 1643589245424675526, guid: 7aec64e3a8a348145a89391419289727, type: 3}
       propertyPath: m_Name
       value: Hellfire_MSL
@@ -202,11 +223,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aec64e3a8a348145a89391419289727, type: 3}
 --- !u!4 &5011700877192580997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127074622426902652, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+  m_PrefabInstance: {fileID: 6343813190967836665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9221972658161372890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2878582162607698211, guid: 7aec64e3a8a348145a89391419289727, type: 3}
   m_PrefabInstance: {fileID: 6343813190967836665}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6597710896034838658
@@ -216,6 +250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3516967581899152697}
     m_Modifications:
+    - target: {fileID: 1606433398155964993, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: arr_Muzzle
+      value: 
+      objectReference: {fileID: 8970326183851887009}
     - target: {fileID: 1643589245424675526, guid: 7aec64e3a8a348145a89391419289727, type: 3}
       propertyPath: m_Name
       value: Hellfire_MSL (2)
@@ -264,11 +302,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aec64e3a8a348145a89391419289727, type: 3}
 --- !u!4 &5047167406466763006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127074622426902652, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+  m_PrefabInstance: {fileID: 6597710896034838658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8970326183851887009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2878582162607698211, guid: 7aec64e3a8a348145a89391419289727, type: 3}
   m_PrefabInstance: {fileID: 6597710896034838658}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8057956716199621327
@@ -278,6 +329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3516967581899152697}
     m_Modifications:
+    - target: {fileID: 1606433398155964993, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: arr_Muzzle
+      value: 
+      objectReference: {fileID: 5197536365948748780}
     - target: {fileID: 1643589245424675526, guid: 7aec64e3a8a348145a89391419289727, type: 3}
       propertyPath: m_Name
       value: Hellfire_MSL (3)
@@ -326,10 +381,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102208915686596701, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aec64e3a8a348145a89391419289727, type: 3}
 --- !u!4 &8239194685022519987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127074622426902652, guid: 7aec64e3a8a348145a89391419289727, type: 3}
+  m_PrefabInstance: {fileID: 8057956716199621327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5197536365948748780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2878582162607698211, guid: 7aec64e3a8a348145a89391419289727, type: 3}
   m_PrefabInstance: {fileID: 8057956716199621327}
   m_PrefabAsset: {fileID: 0}

@@ -646,7 +646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1890973370
 Transform:
   m_ObjectHideFlags: 0
@@ -879,7 +879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9e27867f43da842ad68dde11473b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos_begin: {fileID: 0}
+  gunPoint: {fileID: 39559014}
+  bullet: {fileID: 4055166890383977702, guid: c5257c9eede20c34ca8f0d7ac4e7779f, type: 3}
+  effect: {fileID: 0}
 --- !u!1 &6588504636510328804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1039,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.81494
@@ -1097,9 +1103,17 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
@@ -1124,6 +1138,10 @@ PrefabInstance:
     - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_AngularDrag
@@ -1166,6 +1184,10 @@ PrefabInstance:
     - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_LocalScale.y
@@ -1227,9 +1249,17 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
@@ -1250,6 +1280,10 @@ PrefabInstance:
     - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_AngularDrag
@@ -1288,6 +1322,10 @@ PrefabInstance:
     - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_LocalScale.y
@@ -1349,9 +1387,17 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
@@ -1372,6 +1418,10 @@ PrefabInstance:
     - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_AngularDrag
@@ -1597,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 955750009738990226, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2807371796586276326, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.81494
@@ -1657,9 +1711,17 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4116248809023854815, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222649243553210276, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288860390837290883, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_Name
@@ -1680,6 +1742,10 @@ PrefabInstance:
     - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476519028778464711, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7631272978684258833, guid: f7695064ee342b94b9ffadf5c4de5847, type: 3}
       propertyPath: m_AngularDrag
@@ -2078,6 +2144,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c36f686b7bf54b24b8b6a1b1099305b9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
+--- !u!1 &6318123523159590682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
+  m_PrefabInstance: {fileID: 6588504637395614283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6693944927510322592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
@@ -2091,11 +2162,6 @@ GameObject:
 --- !u!1 &5968385186737621192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 701687137712059011, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
-  m_PrefabInstance: {fileID: 6588504637395614283}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6318123523159590682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
   m_PrefabInstance: {fileID: 6588504637395614283}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6588504637455180130

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int[] armset;
 
     private bool m_gameover = true;
+    public bool flag_supply = false;
+
     public bool gameover
     {
         get;
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Transform pos_of_camera;
+    public Transform pos_of_camera_minimap;
 
     public static GameManager instance
     {

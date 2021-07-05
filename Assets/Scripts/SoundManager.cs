@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
 
     public List<AudioClip> list_audioClips = new List<AudioClip>();
-    public enum sounds { cannon_20mm, cannon_30mm, engage, explosion_01, hellfire, lockNready, rocket, rotor_highpower, rotor_lowpower, targetlocked,warning };
+    public enum sounds { cannon_20mm, cannon_30mm, engage, explosion_01, hellfire, lockNready, rocket, rotor_highpower, rotor_lowpower,targetlocked,warning,tgtdestroyed};
     private AudioSource audioSource;
     private static SoundManager m_instance;
     public static SoundManager instance
@@ -35,13 +35,14 @@ public class SoundManager : MonoBehaviour
     {
         int num = (int)sourcetoplay;
         audioSource.clip = list_audioClips[num];
-        audioSource.Play();       
+        audioSource.Play();               
     }
 
-    public void playOneShotAudio(sounds sourcetoplay)
+    public void playOneShotAudio(sounds sourcetoplay, int priority)
     {
         int num = (int)sourcetoplay;
-        audioSource.PlayOneShot(list_audioClips[num]);
+        audioSource.priority = priority;
+        audioSource.PlayOneShot(list_audioClips[num]);       
     }
 
     public void Pause()
