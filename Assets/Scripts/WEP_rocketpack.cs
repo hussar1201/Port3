@@ -33,7 +33,7 @@ public class WEP_rocketpack : MonoBehaviour, Projectilepack
         else i = 1;
         flag_left = !flag_left;
         
-        Transform tmp = Instantiate(prefab, pos_of_packs[i].position + pos_respawn_rocket, Quaternion.identity).transform;
+        Transform tmp = Instantiate(prefab, pos_of_packs[i].position, Quaternion.identity).transform;
         
         tmp.LookAt(WeaponManager.instance.pos_fall[2]);
 

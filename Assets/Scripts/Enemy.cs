@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private float time_interval_fire = 5f;
     private float time_after_fire = 0f;
 
+    public GameObject obj_parent;
+
 
     public Vector3 enemy_pos_for_body
     {
@@ -37,19 +39,14 @@ public class Enemy : MonoBehaviour
     {
         ps = GetComponentInChildren<ParticleSystem>();
         rb = GetComponent<Rigidbody>();
-        speed = e_Nav.speed * 0.95f;
-        turret = GetComponentInChildren<Enemy_Turret>();
         
-  
-
+        turret = GetComponentInChildren<Enemy_Turret>();
     }
 
 
     private void Update()
     {
-
-        
-
+        speed = e_Nav.speed;
         if (e_Nav.stopped == false)
         {
          
@@ -57,16 +54,15 @@ public class Enemy : MonoBehaviour
 
             rb.MovePosition(transform.position + (heading * speed * Time.deltaTime));
 
-            //transform.position += Vector3.forward * speed * Time.deltaTime;
+            //transform.position += heading.normalized * speed * Time.deltaTime;
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
             transform.LookAt(enemy_pos_for_body);
             ps.gameObject.SetActive(true);           
        
         }
-
-
         else if (e_Nav.stopped == true)
         {
+            ps.gameObject.SetActive(false);
             
             flag_firing = true;
 
@@ -75,19 +71,20 @@ public class Enemy : MonoBehaviour
                 time_after_fire = 0f;
                 turret.Fire();
             }
-            ps.gameObject.SetActive(false);            
+                     
             rb.velocity = Vector3.zero;
             rb.position = rb.position + Vector3.zero;
         }
         time_after_fire += Time.deltaTime;
     }
 
-  
-      
- 
-
-    
 
 
+    public void Die()
+    {
+        Destroy(obj_parent, 0.2f);
+    }
 
 }
+
+

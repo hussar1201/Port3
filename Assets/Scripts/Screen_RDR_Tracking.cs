@@ -31,29 +31,36 @@ public class Screen_RDR_Tracking : MonoBehaviour
     }
 
 
-    public void AcquiredTGT(List<RDR_TrackingInfo> list_frontTGT)
+    public void AcquiredTGT()
     {
+        int cnt_tmp = 0;
+       
 
-        for (int i = 0; i < list_frontTGT.Count; i++)
-        {
+        for (int i = 0; i < RDRController.instance.list_frontTGT.Count; i++)
+        {                     
 
-            if (!set_ID.Contains(list_frontTGT[i].id_tgt))
+            if (!set_ID.Contains(RDRController.instance.list_frontTGT[i].id_tgt))
             {
-
+                Debug.Log(RDRController.instance.list_frontTGT[i].id_tgt);
+                Debug.Log(RDRController.instance.list_frontTGT[i].pos);
                 //if (list_frontTGT[i].pos.x > 300f || list_frontTGT[i].pos.x < -300f) return;
 
-                set_ID.Add(list_frontTGT[i].id_tgt);
-                GameObject tmp = Instantiate(img_point_enemy, list_frontTGT[i].pos, Quaternion.identity);
-
-                RDRController.instance.target = list_frontTGT[i].tgt;
-                
+                set_ID.Add(RDRController.instance.list_frontTGT[i].id_tgt);
+                GameObject tmp = tmp = Instantiate(img_point_enemy, transform.position, Quaternion.identity);
+                tmp.transform.position = EntriesRoot.position + RDRController.instance.list_frontTGT[i].pos;
                 tmp.transform.SetParent(EntriesRoot);
 
-                tmp.transform.position = EntriesRoot.position + list_frontTGT[i].pos;
-
+                RDRController.instance.target = RDRController.instance.list_frontTGT[i].tgt;                            
+                
+              
                 Destroy(tmp, .4f);
+
+              
+
             }
         }
+    
+
     }
 
 
@@ -63,6 +70,7 @@ public class Screen_RDR_Tracking : MonoBehaviour
         text_SearchMode.text = "[SEARCH MODE] " + RDRController.instance.typesTGT[RDRController.instance.type_of_search];
         RDRController.instance.target = null;
         RDRController.instance.target_before = null;
+        set_ID.Clear();
     }
 
 

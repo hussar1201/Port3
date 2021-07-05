@@ -13,8 +13,12 @@ public class RDRController : MonoBehaviour
     public List<RDR_TrackingInfo> list_frontTGT = new List<RDR_TrackingInfo>();
     public Screen_RDR_Tracking screen_RDR_Tracking;
 
+    public RDR_Tracking[] arr_RDR_Tracking;
+
     float interval_scan = 0.4f;
     float time_scan = 0f;
+
+
 
     public static RDRController instance
     {
@@ -54,12 +58,14 @@ public class RDRController : MonoBehaviour
         time_scan += Time.deltaTime;
         if (time_scan >= interval_scan)
         {
-            screen_RDR_Tracking.AcquiredTGT(list_frontTGT);
+            for(int i = 0; i<arr_RDR_Tracking.Length;i++)
+            {
+                arr_RDR_Tracking[i].Search();               
+            }                      
+
+            screen_RDR_Tracking.AcquiredTGT();
             time_scan = 0f;
             list_frontTGT.Clear();
         }
     }
-
-
-
 }

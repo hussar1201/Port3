@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public Text text_Wep_Text_Types;
     public Text text_Wep_Text_Num;
+    public Button btn_Supply;
+    public Slider slider_altitude;
+
 
 
     private static UIManager m_instance;
@@ -32,6 +35,13 @@ public class UIManager : MonoBehaviour
             return;
         }
     }
+
+    private void Update()
+    {
+        if (GameManager.instance.flag_supply) btn_Supply.gameObject.SetActive(true);
+        else btn_Supply.gameObject.SetActive(false);
+    }
+
 
     public void SetUI_Wep()
     {

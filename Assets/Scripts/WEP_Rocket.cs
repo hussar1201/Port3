@@ -48,7 +48,7 @@ public class WEP_Rocket : MonoBehaviour
             {
                 ChangeRoute();
                 changed = true;
-                Destroy(gameObject, 1.2f);
+                
 
             }
             
@@ -65,14 +65,20 @@ public class WEP_Rocket : MonoBehaviour
 
 
 
-    /*
+
     private void OnCollisionEnter(Collision collision)
     {
-        //effect.SetActive(false);
-        Destroy(gameObject, 0.2f);
-        Destroy(collision.gameObject, 0.2f);
+ 
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy tmp = collision.gameObject.GetComponent<Enemy>();
+            tmp.Die();
+        }
+
+        Destroy(gameObject, 0.5f);
     }
-    */
+
+
 
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet_cannon : MonoBehaviour
 {
-    float speed = 2500f;
+    float speed = 2200f;
     private Rigidbody rb;
    
     private int changed = 0;
@@ -51,7 +51,8 @@ public class Bullet_cannon : MonoBehaviour
     {
         pos_fall = WeaponManager.instance.pos_fall[num];
         SetCEP();
+        rb.velocity = Vector3.zero;
         heading = (pos_fall.transform.position+ CEP) - transform.position;
-        rb.AddForce(heading.normalized * speed * .7f, ForceMode.Force);
+        rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
 }

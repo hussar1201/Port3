@@ -61,11 +61,16 @@ public class PlayerController : MonoBehaviour
         if (xInput == 0f) rb.velocity = (transform.forward * speed * zInput);
         else rb.velocity = (transform.forward * speed * zInput) + (transform.right * speed / 5 * xInput);
 
-        if (xInput == 0f && zInput == 0) rb.velocity = new Vector3(0, 0, 0);     
+        if (xInput == 0f && zInput == 0) rb.velocity = new Vector3(0, 0, 0);
+
+
+        // !!!TEST!!! Changing Altitude
+
+        float tmp = UIManager.instance.slider_altitude.value - transform.position.y;
+
+        rb.MovePosition(transform.position + new Vector3(0, tmp, 0));        
+        
 
     }
-
-   
-
 
 }
