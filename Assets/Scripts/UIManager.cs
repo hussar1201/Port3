@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     public Text text_Wep_Text_Types;
     public Text text_Wep_Text_Num;
     public Button btn_Supply;
-    public Slider slider_altitude;
-
+    public RawImage clipBoard;
+    private bool flag_open_clipBoard = false;
 
 
     private static UIManager m_instance;
@@ -39,7 +39,12 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         if (GameManager.instance.flag_supply) btn_Supply.gameObject.SetActive(true);
-        else btn_Supply.gameObject.SetActive(false);
+        else
+        {
+            btn_Supply.gameObject.SetActive(false);
+            clipBoard.gameObject.SetActive(false);
+            flag_open_clipBoard = false;
+        }
     }
 
 
@@ -52,6 +57,27 @@ public class UIManager : MonoBehaviour
         }
 
         text_Wep_Text_Num.text = tmp;
+
+    }
+
+
+    public void OnClickBtnSupply()
+    {       
+        if (flag_open_clipBoard)
+        {
+            clipBoard.gameObject.SetActive(false);
+            flag_open_clipBoard = false;
+        }
+        else
+        {
+            clipBoard.gameObject.SetActive(true);
+            flag_open_clipBoard = true;
+        }
+
+        if(!GameManager.instance.flag_supply)
+        {
+            
+        }
 
     }
 

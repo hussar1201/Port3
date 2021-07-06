@@ -15,6 +15,7 @@ public class WeaponManager : MonoBehaviour
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
     public Transform[] pos_fall;
+    //public ParticleSystem ps_gun_tracker;
     
     public List<int> list_cnt_Ammo = new List<int>();
 
@@ -23,13 +24,9 @@ public class WeaponManager : MonoBehaviour
     public UI_HeadToCamera target_sign_locked;
     public UI_HeadToCamera target_before_sign_locked;
 
-
     private List<WEP_hardpoint> hardPoint_armed_hellfire = new List<WEP_hardpoint>();
     private List<WEP_hardpoint> hardPoint_armed_rocket = new List<WEP_hardpoint>();
     private WEP_Cannon cannon;
-
-
-
 
     public int num_rockets
     {
@@ -70,10 +67,9 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-
         ReloadAmmo();
         lastfiretime_hellfire = lastfiretime_rocket = lastfiretime_gun = 0f;
-}
+    }
 
 
     private void Update()
@@ -114,6 +110,7 @@ public class WeaponManager : MonoBehaviour
 
             for (int i = 0; i < hardPoint_armed_hellfire.Count;i++)
             {
+                
                 if (hardPoint_armed_hellfire[i].Fire(target) && target.gameObject.activeInHierarchy)
                 {
                     SoundManager.instance.playOneShotAudio(SoundManager.sounds.engage, 2);
@@ -129,8 +126,8 @@ public class WeaponManager : MonoBehaviour
 
         if (PlayerInput.instance.fire_rocket && num_rockets > 0 &&
            Time.time > lastfiretime_rocket + interval_time_rocket)
-        {                      
-
+        {
+            
             for (int i = 0; i < hardPoint_armed_rocket.Count; i++)
             {
                 if (hardPoint_armed_rocket[i].Fire(target))
@@ -148,8 +145,9 @@ public class WeaponManager : MonoBehaviour
 
         if (PlayerInput.instance.fire_gun && Time.time > lastfiretime_gun + interval_time_gun)
         {
-            lastfiretime_gun = Time.time;
+            lastfiretime_gun = Time.time;          
             cannon.Fire();
+           
         }
 
 
@@ -167,15 +165,16 @@ public class WeaponManager : MonoBehaviour
 
     }
 
-
-
-
     public void ReloadAmmo()
     {
-        
+        arr_hardPoint.Initialize();
+        arr_hardPoint = GetComponentsInChildren<WEP_hardpoint>();
+
         list_cnt_Ammo.Clear();
         num_rockets = 0;
         num_hellfires = 0;
+        hardPoint_armed_hellfire.Clear();
+        hardPoint_armed_rocket.Clear();
 
         for (int i = 0; i < arr_hardPoint.Length; i++)
         {
@@ -193,11 +192,13 @@ public class WeaponManager : MonoBehaviour
                     hardPoint_armed_rocket.Add(arr_hardPoint[i]);
                     break;
             }
+           
         }
 
         lastfiretime_hellfire = Time.time;
 
-        target_before = null;
+        target = target_before = null;
+        
 
         list_cnt_Ammo.Add(num_hellfires);
         list_cnt_Ammo.Add(num_rockets);
@@ -205,7 +206,6 @@ public class WeaponManager : MonoBehaviour
         if (UIManager.instance != null) UIManager.instance.SetUI_Wep();
 
     }
-
 
 
 

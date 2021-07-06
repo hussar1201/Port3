@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
         
         if (time > afterRespawnTime)
         {
-            afterRespawnTime = Random.RandomRange(5f, 15f);
+            afterRespawnTime = Random.Range(5f, 15f);
             int x = Random.Range(0, arr_prefabs.Length);
                       
             Instantiate(arr_prefabs[x], transform.position, Quaternion.identity);

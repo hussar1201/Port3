@@ -5,7 +5,7 @@ using UnityEngine;
 public class WEP_Hellfire : MonoBehaviour
 {
 
-    float speed = 100f;
+    float speed = 150f;
     private Rigidbody rb;
 
     private ParticleSystem ps;
@@ -13,39 +13,37 @@ public class WEP_Hellfire : MonoBehaviour
     private bool fired = false;
     private GameObject target;
     private Vector3 target_before;
-
+    private Collider collider_explosion;
 
     private float time_before_tracking = .2f;
     private float time_after_launched = 0f;
     private Vector3 point_start;
     private bool tgt_set;
-    public GameObject arr_Muzzle;
     private Transform pos_pass;
 
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
+        collider_explosion = GetComponent<Collider>();
         tgt_set = false;
         pos_pass = WeaponManager.instance.pos_fall[0];
-
-        /*
+        collider_explosion.enabled = false;
         ps = GetComponentInChildren<ParticleSystem>();
          ps.Play();
         ps.Pause();
-        */
+        
     }
 
     public void Fire(GameObject target)
     {
         this.target = target;
 
-        //GameManager.instance.transform.LookAt(target.transform);
+        
         transform.SetParent(GameManager.instance.transform);
         point_start = transform.position;
         fired = true;
         target_before = target.transform.position;
-        arr_Muzzle.SetActive(true);
-        //ps.Play();
+        ps.Play();
 
     }
 
@@ -68,7 +66,7 @@ public class WEP_Hellfire : MonoBehaviour
         {
             //rb.isKinematic = false;
             Vector3 heading, los;
-
+            collider_explosion.enabled = true;
             if (target != null)
             {
                 heading = target.transform.position + new Vector3(0f, 1f, 0f);
@@ -90,36 +88,17 @@ public class WEP_Hellfire : MonoBehaviour
 
     }
 
-    /*
-    IEnumerator Startflash()
-    {
-        const float INTERVAL = 0.03f;
-        for (int i = 0; i < arr_Muzzle.Length - 1; i++)
-        {
-            arr_Muzzle[i].SetActive(true);
-            arr_Muzzle[i + 1].SetActive(true);
-            yield return new WaitForSeconds(INTERVAL);
-            arr_Muzzle[i].SetActive(false);
-            arr_Muzzle[i + 1].SetActive(false);
-            yield return new WaitForSeconds(INTERVAL);
-        }
-    }
-    */
-
+    
     private void OnCollisionEnter(Collision collision)
     {
 
-        arr_Muzzle.SetActive(false);
-
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Enemy tmp = collision.gameObject.GetComponent<Enemy>();
-            tmp.Die();
+            ps.Stop();
             SoundManager.instance.playOneShotAudio(SoundManager.sounds.tgtdestroyed, 2);
+            Destroy(gameObject, 0.3f);
         }
-        Destroy(gameObject, 0.5f);
+
     }
-
-
 
 }

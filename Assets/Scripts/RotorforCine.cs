@@ -7,10 +7,8 @@ public class RotorforCine : MonoBehaviour
 
     private const float speed_normal = 1000f;
     private float speed;
-    private float speed_before;
     public int mode_rotate;
-    bool flag_speedmeter = false;
-
+    
     private Vector3 rotation;
 
     // Start is called before the first frame update

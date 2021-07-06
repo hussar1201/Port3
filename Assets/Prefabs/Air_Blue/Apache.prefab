@@ -973,6 +973,7 @@ MonoBehaviour:
   - {fileID: 902578740}
   - {fileID: 302013623}
   - {fileID: 1890973370}
+  ps_gun_tracker: {fileID: 0}
   list_cnt_Ammo: 
   target: {fileID: 0}
   target_before: {fileID: 0}
@@ -2144,11 +2145,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c36f686b7bf54b24b8b6a1b1099305b9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
---- !u!1 &6318123523159590682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
-  m_PrefabInstance: {fileID: 6588504637395614283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6693944927510322592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
@@ -2162,6 +2158,11 @@ GameObject:
 --- !u!1 &5968385186737621192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 701687137712059011, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
+  m_PrefabInstance: {fileID: 6588504637395614283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6318123523159590682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95f89e5742e72f47ac7c207d1afbf8b, type: 3}
   m_PrefabInstance: {fileID: 6588504637395614283}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6588504637455180130
