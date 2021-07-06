@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3626908535916372894}
   - component: {fileID: 2708013272300404509}
   - component: {fileID: 2708013272300404508}
+  - component: {fileID: 1383555735754005622}
   m_Layer: 0
   m_Name: Shot_Enemy_Frag
-  m_TagString: Untagged
+  m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos_for_explosion: {x: 0, y: 0, z: 0}
+--- !u!135 &1383555735754005622
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978465299668337227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4382147565730638232
 PrefabInstance:
   m_ObjectHideFlags: 0

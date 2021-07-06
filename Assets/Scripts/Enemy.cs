@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private float speed;
     private Vector3 pos_Nav_before;
     private Enemy_Turret turret;
-    private ParticleSystem ps;
+    public ParticleSystem[] ps;
     private bool flag_firing;
 
     private float time_interval_fire = 5f;
@@ -37,9 +37,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = GetComponentInChildren<ParticleSystem>();
         rb = GetComponent<Rigidbody>();
-        
         turret = GetComponentInChildren<Enemy_Turret>();
     }
 
@@ -57,12 +55,12 @@ public class Enemy : MonoBehaviour
             //transform.position += heading.normalized * speed * Time.deltaTime;
             enemy_pos_for_body = new Vector3(e_Nav.transform.position.x, transform.position.y, e_Nav.transform.position.z);
             transform.LookAt(enemy_pos_for_body);
-            ps.gameObject.SetActive(true);           
+            ps[0].gameObject.SetActive(true);           
        
         }
         else if (e_Nav.stopped == true)
         {
-            ps.gameObject.SetActive(false);
+            ps[0].gameObject.SetActive(false);
             
             flag_firing = true;
 
@@ -78,11 +76,20 @@ public class Enemy : MonoBehaviour
         time_after_fire += Time.deltaTime;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("MSL_AT"))
+        {
+            ps[1].Play();
+
+            Die();
+        }
+    }
 
 
     public void Die()
     {
-        Destroy(obj_parent, 0.2f);
+       Destroy(obj_parent, .5f);
     }
 
 }

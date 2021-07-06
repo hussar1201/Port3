@@ -8,4 +8,7 @@ public class RDR_TrackingInfo
     public int id_tgt;
     public Vector3 pos;
 
+
+
+
 }

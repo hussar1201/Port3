@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Bullet_cannon : MonoBehaviour
 {
-    float speed = 2200f;
+    float speed = 2000f;
     private Rigidbody rb;
    
     private int changed = 0;
-    private float time_before_tracking = .3f;
-    private float time_after_launched = 0f;   
+    
     
     private float[] arr_CEP = { 0f, 0f, 0f };
     Vector3 CEP;
@@ -55,4 +54,19 @@ public class Bullet_cannon : MonoBehaviour
         heading = (pos_fall.transform.position+ CEP) - transform.position;
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy tmp = collision.gameObject.GetComponent<Enemy>();
+            tmp.Die();
+        }
+        Destroy(gameObject, 0.5f);
+    }
+
+
+
 }

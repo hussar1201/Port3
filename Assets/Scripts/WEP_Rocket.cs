@@ -7,11 +7,9 @@ public class WEP_Rocket : MonoBehaviour
     float speed = 1200f;
     private Rigidbody rb;
 
-    public GameObject effect;
+    public ParticleSystem[] effects;
 
     private bool changed = false;
-    private float time_before_tracking = .3f;
-    private float time_after_launched = 0f;
     private float[] arr_CEP = { 0f, 0f, 0f };
 
     Vector3 heading;
@@ -21,9 +19,19 @@ public class WEP_Rocket : MonoBehaviour
     float time_for_change_route = 0.3f;
 
     public Transform pos_fall;
+    private Collider collider_Explode;
+
+    public void Awake()
+    {
+        collider_Explode = GetComponent<Collider>();
+        collider_Explode.enabled = false;
+    }
+
 
     public void Start()
     {
+
+
         for (int i = 0; i < arr_CEP.Length; i++)
         {
             arr_CEP[i] = Random.Range(0f, .2f);
@@ -33,7 +41,6 @@ public class WEP_Rocket : MonoBehaviour
         pos_fall = WeaponManager.instance.pos_fall[0];
         
         heading = (pos_fall.transform.position+CEP) - transform.position;
-        //transform.LookAt(heading);
         rb = GetComponent<Rigidbody>();
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
@@ -48,16 +55,14 @@ public class WEP_Rocket : MonoBehaviour
             {
                 ChangeRoute();
                 changed = true;
-                
-
-            }
-            
+            }          
         }
     }
 
     private void ChangeRoute()
     {
         pos_fall = WeaponManager.instance.pos_fall[1];
+        collider_Explode.enabled = true;
         heading = (pos_fall.transform.position) - transform.position;
         rb.AddForce(heading.normalized * speed * .7f, ForceMode.Force);
     }
@@ -68,12 +73,16 @@ public class WEP_Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
- 
+        effects[0].Stop();
+        effects[1].Play();
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
             tmp.Die();
         }
+
+
 
         Destroy(gameObject, 0.5f);
     }

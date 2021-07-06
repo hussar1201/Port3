@@ -20,9 +20,6 @@ public class WEP_hellfirepack : MonoBehaviour, Projectilepack
     {
         if (cnt < size_pack)
         {
-            Debug.Log(size_pack);
-            Debug.Log(cnt);
-
             arr_Hellfire[cnt++].Fire(target);
             return true;
         }

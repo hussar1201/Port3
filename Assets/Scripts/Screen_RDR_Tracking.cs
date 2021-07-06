@@ -33,33 +33,30 @@ public class Screen_RDR_Tracking : MonoBehaviour
 
     public void AcquiredTGT()
     {
-        int cnt_tmp = 0;
-       
-
+                
         for (int i = 0; i < RDRController.instance.list_frontTGT.Count; i++)
         {                     
 
             if (!set_ID.Contains(RDRController.instance.list_frontTGT[i].id_tgt))
             {
-                Debug.Log(RDRController.instance.list_frontTGT[i].id_tgt);
-                Debug.Log(RDRController.instance.list_frontTGT[i].pos);
-                //if (list_frontTGT[i].pos.x > 300f || list_frontTGT[i].pos.x < -300f) return;
-
                 set_ID.Add(RDRController.instance.list_frontTGT[i].id_tgt);
-                GameObject tmp = tmp = Instantiate(img_point_enemy, transform.position, Quaternion.identity);
+                GameObject tmp = Instantiate(img_point_enemy, transform.position, Quaternion.identity);
+                tmp.transform.SetParent(EntriesRoot);        
                 tmp.transform.position = EntriesRoot.position + RDRController.instance.list_frontTGT[i].pos;
-                tmp.transform.SetParent(EntriesRoot);
-
-                RDRController.instance.target = RDRController.instance.list_frontTGT[i].tgt;                            
                 
+                RDRController.instance.target = RDRController.instance.list_frontTGT[i].tgt;                                            
               
-                Destroy(tmp, .4f);
-
-              
+                Destroy(tmp, .5f);              
 
             }
         }
-    
+
+        /*
+        GameObject tmp = Instantiate(img_point_enemy, transform.position, Quaternion.identity);
+        tmp.transform.position = EntriesRoot.position;
+        tmp.transform.SetParent(EntriesRoot);
+        tmp.transform.position += new Vector3(600, 0, 0);
+        */
 
     }
 

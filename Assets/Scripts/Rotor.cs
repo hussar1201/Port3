@@ -9,8 +9,7 @@ public class Rotor : MonoBehaviour
     private float speed;
     private float speed_before;
     public int mode_rotate;
-    bool flag_speedmeter = false;
-
+    
     private Vector3 rotation;
 
     // Start is called before the first frame update
@@ -29,14 +28,7 @@ public class Rotor : MonoBehaviour
         speed = speed_normal * (1 + Mathf.Abs(PlayerInput.instance.move));
         if (mode_rotate == 0)
         {
-            /*
-            if (speed_before < speed || speed_before > speed)
-            {
-                flag_speedmeter = true;
-            }
-            else flag_speedmeter = false;
-            */
-
+            
             if (Mathf.Abs(PlayerInput.instance.move) < .5)
             {
                 if (speed_before > .5) SoundManager.instance.StopPlay(); 

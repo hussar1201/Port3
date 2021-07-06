@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HeliMove : MonoBehaviour
 {
-    float speed_up = 2f;
     float speed_foward = 20f;
 
     // Start is called before the first frame update

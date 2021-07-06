@@ -13,9 +13,11 @@ public class RDRController : MonoBehaviour
     public List<RDR_TrackingInfo> list_frontTGT = new List<RDR_TrackingInfo>();
     public Screen_RDR_Tracking screen_RDR_Tracking;
 
-    public RDR_Tracking[] arr_RDR_Tracking;
+    private RDR_TrackingInfo tgt_now;
 
-    float interval_scan = 0.4f;
+    public RDR_Tracking[] rdr_Tracking;
+
+    float interval_scan = 0.5f;
     float time_scan = 0f;
 
 
@@ -40,6 +42,7 @@ public class RDRController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        tgt_now = new RDR_TrackingInfo();
     }
 
 
@@ -52,19 +55,34 @@ public class RDRController : MonoBehaviour
         list_frontTGT.Clear();
     }
 
+    // not yet....
+    public void ChangeTarget()
+    {      
+        for (int i=0;i<list_frontTGT.Count;i++)
+        {          
+            if (list_frontTGT[i].id_tgt != tgt_now.id_tgt)
+            {
+                target = list_frontTGT[i].tgt;
+            }
+        }
+
+    }
+
 
     private void Update()
     {
         time_scan += Time.deltaTime;
         if (time_scan >= interval_scan)
         {
-            for(int i = 0; i<arr_RDR_Tracking.Length;i++)
-            {
-                arr_RDR_Tracking[i].Search();               
-            }                      
-
-            screen_RDR_Tracking.AcquiredTGT();
+            list_frontTGT.Clear();
             time_scan = 0f;
+            rdr_Tracking[0].Search();                                   
+            screen_RDR_Tracking.AcquiredTGT();
+
+            if (list_frontTGT.Count != 0) { 
+                target = list_frontTGT[0].tgt;
+                tgt_now.id_tgt = list_frontTGT[0].id_tgt;
+            }
             list_frontTGT.Clear();
         }
     }
