@@ -83,7 +83,7 @@ public class RDRController : MonoBehaviour
                 target = list_frontTGT[0].tgt;
                 tgt_now.id_tgt = list_frontTGT[0].id_tgt;
             }
-            list_frontTGT.Clear();
+            
         }
     }
 }

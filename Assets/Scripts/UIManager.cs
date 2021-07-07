@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public Button btn_Supply;
     public RawImage clipBoard;
     private bool flag_open_clipBoard = false;
-
+    public UI_Indicator_HP_Status indicator_HP_Status;
 
     private static UIManager m_instance;
     public static UIManager instance
@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         for(int i=0;i< WeaponManager.instance.list_cnt_Ammo.Count; i++)
         {
             tmp += "" + WeaponManager.instance.list_cnt_Ammo[i] + "\n\n";
-        }
+            }
 
         text_Wep_Text_Num.text = tmp;
 

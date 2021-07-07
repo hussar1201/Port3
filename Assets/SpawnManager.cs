@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] arr_prefabs;
 
     float time = 0f;
-    float afterRespawnTime=3f;
+    float afterRespawnTime=5f;
 
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
         
         if (time > afterRespawnTime)
         {
-            afterRespawnTime = Random.Range(5f, 15f);
+            afterRespawnTime = Random.Range(10f, 20f);
             int x = Random.Range(0, arr_prefabs.Length);
                       
             Instantiate(arr_prefabs[x], transform.position, Quaternion.identity);

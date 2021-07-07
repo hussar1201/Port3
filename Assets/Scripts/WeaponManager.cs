@@ -157,12 +157,6 @@ public class WeaponManager : MonoBehaviour
     {
         arr_hardPoint[num].ChangeSet();
         GameManager.instance.armset[num] = arr_hardPoint[num].wep_set;
-        
-        for(int i = 0;i< GameManager.instance.armset.Length;i++)
-        {
-            Debug.Log(i + " : " + GameManager.instance.armset[num]);
-        }
-
     }
 
     public void ReloadAmmo()
