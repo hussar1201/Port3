@@ -45,12 +45,9 @@ public class WEP_hardpoint : MonoBehaviour
     {
         for (int i = 0; i < arr_pack.Length; i++)
         {
-            Debug.Log("Called?");
-
             arr_pack[i].SetActive(!arr_pack[i].activeInHierarchy);
             if (arr_pack[i].activeInHierarchy)
             {
-                Debug.Log(wep_set);
                 wep_set = i;
                 wep_pack = null;
                 wep_pack = GetComponentInChildren<Projectilepack>();

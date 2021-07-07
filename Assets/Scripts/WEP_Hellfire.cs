@@ -18,27 +18,24 @@ public class WEP_Hellfire : MonoBehaviour
     private float time_before_tracking = .2f;
     private float time_after_launched = 0f;
     private Vector3 point_start;
-    private bool tgt_set;
     private Transform pos_pass;
+    private bool flag_playsound = false;
 
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
         collider_explosion = GetComponent<Collider>();
-        tgt_set = false;
         pos_pass = WeaponManager.instance.pos_fall[0];
         collider_explosion.enabled = false;
         ps = GetComponentInChildren<ParticleSystem>();
-         ps.Play();
-        ps.Pause();
-        
+        ps.Play();
+        ps.Pause();      
     }
 
     public void Fire(GameObject target)
     {
         this.target = target;
-
-        
+               
         transform.SetParent(GameManager.instance.transform);
         point_start = transform.position;
         fired = true;
@@ -95,7 +92,12 @@ public class WEP_Hellfire : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             ps.Stop();
-            SoundManager.instance.playOneShotAudio(SoundManager.sounds.tgtdestroyed, 2);
+            if (!flag_playsound) 
+            {
+                flag_playsound = true;
+                SoundManager.instance.playOneShotAudio(SoundManager.sounds.tgtdestroyed, 2);
+            }
+            
             Destroy(gameObject, 0.3f);
         }
 
