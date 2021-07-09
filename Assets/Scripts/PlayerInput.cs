@@ -51,9 +51,7 @@ public class PlayerInput : MonoBehaviour
         
     void Update()
     {
-        
-        
-        
+
         if (mode_input.Equals("stick"))
         {
             move = joystick.Vertical;
