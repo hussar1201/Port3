@@ -676,6 +676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6983393138207238885}
     m_Modifications:
+    - target: {fileID: 57804656424286788, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
+      propertyPath: time_for_search
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 321461285974692016, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -742,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_Speed
-      value: 12
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_Height
@@ -754,11 +758,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_BaseOffset
-      value: -0.3
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
+      propertyPath: m_Acceleration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_AngularSpeed
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: avoidancePriority

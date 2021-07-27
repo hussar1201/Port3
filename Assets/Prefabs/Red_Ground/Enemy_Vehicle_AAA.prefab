@@ -616,7 +616,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Speed
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Height
@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_BaseOffset
-      value: -0.1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Acceleration
@@ -705,6 +705,10 @@ PrefabInstance:
     - target: {fileID: 7890405940281450701, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: pc
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890405940281450701, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
+      propertyPath: time_for_search
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4205182711900309256, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}

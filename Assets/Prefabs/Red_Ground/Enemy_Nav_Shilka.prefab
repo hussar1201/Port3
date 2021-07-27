@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   e_Nav: {fileID: 0}
+  ps: []
+  obj_parent: {fileID: 0}
 --- !u!195 &7997460349902535
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -106,5 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17fb1021e7154c118305de9d0b3bf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathFinder: {fileID: 0}
   pc: {fileID: 0}
+  distance: 700
+  time_for_search: 1
   stopped: 0

@@ -83,5 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17fb1021e7154c118305de9d0b3bf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathFinder: {fileID: 0}
   pc: {fileID: 0}
+  distance: 600
+  time_for_search: 1
   stopped: 0
