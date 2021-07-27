@@ -24,10 +24,9 @@ public class Indicator_Part_HP_Status : MonoBehaviour
         color_present = color_original;               
     }
 
-    // Update is called once per frame
+    /*--TEST CODE--
     void Update()
-    {
-        
+    {     
         time += Time.deltaTime;
         if (time_x <= time && color_HSV_default[0]>=0f)
         {
@@ -35,9 +34,18 @@ public class Indicator_Part_HP_Status : MonoBehaviour
             color_present = Color.HSVToRGB(color_HSV_default[0]-=0.01f, color_HSV_default[1] += 0.01f, color_HSV_default[2]);
             color_present.a = 0.3f;
             part.color = color_present;
-
         }
-          
-
     }
+    */
+
+    public void ChangeColor()
+    {
+        color_present = Color.HSVToRGB(color_HSV_default[0] -= 0.03f, color_HSV_default[1] += 0.03f, color_HSV_default[2]);
+        color_present.a = 0.3f;
+        part.color = color_present;
+    }
+
+
+
+
 }

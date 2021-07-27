@@ -14,11 +14,11 @@ public class UI_Indicator_HP_Status : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void Set_HP_part(int x)
     {
-        
-
-
+        arr_parts[x].ChangeColor();
     }
+
+
 }

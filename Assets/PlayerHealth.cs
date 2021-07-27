@@ -5,17 +5,29 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private ColliderCollecter colliderCollecter;
+    public enum part { Cockpit, Wing, Engine, FrameRear, TailH, TailV };
+    private int[] arr_part_HP = new int[6];
+
 
     // Start is called before the first frame update
     void Start()
     {
-        colliderCollecter = GetComponentInChildren<ColliderCollecter>();       
+        colliderCollecter = GetComponentInChildren<ColliderCollecter>();
+
+        for(int i =0;i<arr_part_HP.Length;i++)
+        {
+            arr_part_HP[i] = 3;
+        }
+
     }
 
 
-    // Update is called once per frame
-    void Update()
+    public void OnPartDamaged(int x)
     {
-        
+        arr_part_HP[x]--;
+        if (x == 5) UIManager.instance.indicator_HP_Status.Set_HP_part(x-1);
+        else UIManager.instance.indicator_HP_Status.Set_HP_part(x);
     }
+
+
 }
