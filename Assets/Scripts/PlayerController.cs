@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     float xRotation = 0.0f; // yaw ??????
     
     private const float LIMIT_DOWN = 3.2f;
-    private const float LIMIT_UP = 45f;
+    private const float LIMIT_UP = 40f;
     private const float LIMITER_ALT_SPEED_CHANGED = 2f;
 
     private float alt_calculated, move_LR_calculated;
