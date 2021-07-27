@@ -17,10 +17,12 @@ public class WEP_Rocket : MonoBehaviour
 
     float time_passed;
     float time_for_change_route = 0.3f;
+    public bool flag_left;
 
     public Transform pos_fall;
     private Collider collider_Explode;
 
+    
     public void Awake()
     {
         collider_Explode = GetComponent<Collider>();
@@ -38,9 +40,11 @@ public class WEP_Rocket : MonoBehaviour
         }
         CEP = new Vector3(arr_CEP[0], arr_CEP[1], arr_CEP[2]);
 
-        pos_fall = WeaponManager.instance.pos_fall[0];
+        pos_fall = WeaponManager.instance.pos_fall[1];
+
+
+        CalLR();
         
-        heading = (pos_fall.transform.position+CEP) - transform.position;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
@@ -59,11 +63,19 @@ public class WEP_Rocket : MonoBehaviour
         }
     }
 
+    private void CalLR()
+    {
+        if (flag_left == true) heading = (pos_fall.transform.position + new Vector3(-2.3f, -0.69f, 0.0f) + CEP) - transform.position;
+        else heading = (pos_fall.transform.position + new Vector3(2.3f, -0.69f, 0.0f) + CEP) - transform.position;
+    }
+
+
     private void ChangeRoute()
     {
-        pos_fall = WeaponManager.instance.pos_fall[1];
+        pos_fall = WeaponManager.instance.pos_fall[0];
+        
         collider_Explode.enabled = true;
-        heading = (pos_fall.transform.position) - transform.position;
+        CalLR();
         rb.AddForce(heading.normalized * speed * .7f, ForceMode.Force);
     }
 
@@ -81,8 +93,7 @@ public class WEP_Rocket : MonoBehaviour
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
             tmp.Die();
         }
-
-
+        rb.isKinematic = true;
 
         Destroy(gameObject, 0.5f);
     }

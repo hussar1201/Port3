@@ -68,7 +68,17 @@ public class PlayerController : MonoBehaviour
         Vector3 speed_current = new Vector3(0, 0, 0);
 
         if (zInput != 0f) speed_current +=(transform.forward * speed * zInput);
-        if (yInput != 0f) speed_current += (transform.up * speed * (yInput / LIMITER_ALT_SPEED_CHANGED));
+        if (yInput != 0f)
+        {
+
+            if (transform.position.y > LIMIT_UP) 
+                transform.position = new Vector3(transform.position.x,LIMIT_UP, transform.position.z);
+            else
+                speed_current += (transform.up * speed * (yInput / LIMITER_ALT_SPEED_CHANGED));           
+
+        }
+            
+
         if (move_slide_LR != 0f) 
             speed_current += (transform.right * speed * (move_slide_LR / (LIMITER_ALT_SPEED_CHANGED * 1.5f)));
 

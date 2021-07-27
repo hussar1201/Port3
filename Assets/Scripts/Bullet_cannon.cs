@@ -64,6 +64,7 @@ public class Bullet_cannon : MonoBehaviour
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
             tmp.Die();
         }
+        rb.isKinematic = true;
         Destroy(gameObject, 0.5f);
     }
 

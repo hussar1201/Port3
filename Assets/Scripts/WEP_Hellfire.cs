@@ -5,7 +5,7 @@ using UnityEngine;
 public class WEP_Hellfire : MonoBehaviour
 {
 
-    float speed = 150f;
+    float speed = 300f;
     private Rigidbody rb;
 
     private ParticleSystem ps;
@@ -54,9 +54,10 @@ public class WEP_Hellfire : MonoBehaviour
 
         if (time_before_tracking > time_after_launched)
         {
-            rb.MovePosition(transform.position + 
-                Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);
-                        
+            //rb.MovePosition(transform.position + Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);
+            rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+
+
             //rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
         }
         else if (time_before_tracking <= time_after_launched)
@@ -66,6 +67,21 @@ public class WEP_Hellfire : MonoBehaviour
             collider_explosion.enabled = true;
             if (target != null)
             {
+
+
+                /*
+                Vector3 tmp_rdr_to_heli = transform.position - pos_heli;
+                Vector3 tmp_tgt_to_heli = hitColliders[i].transform.position - pos_heli;
+
+                rdr_to_heli.x = tmp_rdr_to_heli.x;
+                rdr_to_heli.y = tmp_rdr_to_heli.z;
+
+                tgt_to_heli.x = tmp_tgt_to_heli.x;
+                tgt_to_heli.y = tmp_tgt_to_heli.z;
+
+                float angle = Vector2.SignedAngle(tgt_to_heli, rdr_to_heli);
+                */
+
                 heading = target.transform.position + new Vector3(0f, 1f, 0f);
                 los = heading - transform.position;
                 transform.LookAt(target.transform);

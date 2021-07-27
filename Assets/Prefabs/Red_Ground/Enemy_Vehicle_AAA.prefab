@@ -120,9 +120,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044993065}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2257858745885474699}
   m_RootOrder: 11
@@ -616,7 +616,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Speed
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Height
@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_BaseOffset
-      value: -0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Acceleration
@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_AngularSpeed
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: avoidancePriority
@@ -644,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997460349902535, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_StoppingDistance
-      value: 80
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1747565268807886426, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: m_Name
@@ -707,8 +707,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7890405940281450701, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
+      propertyPath: distance
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890405940281450701, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
       propertyPath: time_for_search
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4205182711900309256, guid: 8bb4ad7b980ec4f0190617703b2a1536, type: 3}
