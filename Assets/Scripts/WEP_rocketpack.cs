@@ -10,20 +10,6 @@ public class WEP_rocketpack : MonoBehaviour, Projectilepack
     public WEP_Rocket prefab;
     private bool flag_left = true;
 
-    /* --TEST CODE--
-    float a = 0;
-    float b = 1.5f;
-    private void Update()
-    {   
-        a += Time.deltaTime;
-        if (a >=b)
-        {
-            a = 0f;
-            Fire(gameObject);
-        }
-    }
-    */
-
     public bool Fire(GameObject target)
     {
         

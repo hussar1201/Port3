@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     private bool flag_open_clipBoard = false;
     public UI_Indicator_HP_Status indicator_HP_Status;
 
+    private Slider[] arr_sliders;
+
     private static UIManager m_instance;
     public static UIManager instance
     {
@@ -34,6 +36,9 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        arr_sliders = GetComponentsInChildren<Slider>();
+        
     }
 
     private void Update()
@@ -47,15 +52,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
+   
 
-    public void SetUI_Wep()
+    public void SetUI_Wep(int mode)
     {
+        
         string tmp = "";
         for(int i=0;i< WeaponManager.instance.list_cnt_Ammo.Count; i++)
         {
             tmp += "" + WeaponManager.instance.list_cnt_Ammo[i] + "\n\n";
-            }
-
+            if(mode==1) arr_sliders[i].maxValue = WeaponManager.instance.list_cnt_Ammo[i];
+            arr_sliders[i].value = WeaponManager.instance.list_cnt_Ammo[i];
+        }
         text_Wep_Text_Num.text = tmp;
 
     }

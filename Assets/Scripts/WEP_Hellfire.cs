@@ -56,66 +56,29 @@ public class WEP_Hellfire : MonoBehaviour
         if (!fired) return;
         time_after_launched += Time.deltaTime;
         time_tracking += Time.deltaTime;
-        //StartCoroutine(Startflash());
-
+        
         if (time_interval_tracking < time_tracking) 
         {
             point_start = transform.position;
             time_tracking = 0f;
         }          
 
-    Vector3 tmp_tgt_to_msl_now = new Vector3();
-        Vector3 tmp_tgt_to_msl_before = new Vector3();
-
         if (time_before_tracking > time_after_launched)
-        {
-
-            //rb.MovePosition(transform.position + Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);          
-            //rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
-
+        {     
             rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
-
         }
-        else if (time_before_tracking <= time_after_launched)
-        {          
-
-            Vector3 heading, los;
-
+        else 
+        {                            
             collider_explosion.enabled = true;
             if (target != null)
             {
-
                 Vector3 direction = target.transform.position - transform.position;
                 direction.Normalize();
                 Quaternion dirRotation = Quaternion.LookRotation(direction);
                 rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, dirRotation, 180f * Time.deltaTime)); //test1
-                rb.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime)); //Move Method 1
-
-                //rb.rotation = tmp_q;
-
-                /*
-                heading = target.transform.position + new Vector3(0f, 1f, 0f);
-                los = heading - transform.position;
-                transform.LookAt(target.transform);
-                target_before = target.transform.position;
-                 */
-
+                rb.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime)); //Move Method 1                       
             }
-
-            /*
-            else
-            {
-                heading = target_before;
-                los = heading - transform.position;
-                transform.LookAt(heading);
-                Destroy(gameObject, 0.5f);
-            }
-            */
-            //rb.MovePosition(transform.position + los.normalized * speed * Time.deltaTime);          
-
-
         }
-
     }
 
     

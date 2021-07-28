@@ -118,7 +118,7 @@ public class WeaponManager : MonoBehaviour
                     num_hellfires--;
                     list_cnt_Ammo[0] = num_hellfires;
                     target_sign_locked.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    UIManager.instance.SetUI_Wep();
+                    UIManager.instance.SetUI_Wep(0);
                     break;
                 }
             }
@@ -136,7 +136,7 @@ public class WeaponManager : MonoBehaviour
                     num_rockets --;
                     list_cnt_Ammo[1] = num_rockets;
                     SoundManager.instance.playOneShotAudio(SoundManager.sounds.rocket,3);
-                    UIManager.instance.SetUI_Wep();               
+                    UIManager.instance.SetUI_Wep(0);               
                     break;
                 }
             }
@@ -197,7 +197,7 @@ public class WeaponManager : MonoBehaviour
         list_cnt_Ammo.Add(num_hellfires);
         list_cnt_Ammo.Add(num_rockets);
 
-        if (UIManager.instance != null) UIManager.instance.SetUI_Wep();
+        if (UIManager.instance != null) UIManager.instance.SetUI_Wep(1);
 
     }
 

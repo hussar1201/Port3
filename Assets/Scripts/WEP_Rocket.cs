@@ -33,18 +33,17 @@ public class WEP_Rocket : MonoBehaviour
     public void Start()
     {
 
-
         for (int i = 0; i < arr_CEP.Length; i++)
         {
-            arr_CEP[i] = Random.Range(0f, .2f);
+            arr_CEP[i] = Random.Range(0f, .1f);
         }
         CEP = new Vector3(arr_CEP[0], arr_CEP[1], arr_CEP[2]);
 
-        pos_fall = WeaponManager.instance.pos_fall[1];
+        pos_fall = WeaponManager.instance.pos_fall[0];
 
 
         CalLR();
-        
+                
         rb = GetComponent<Rigidbody>();
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
@@ -52,6 +51,7 @@ public class WEP_Rocket : MonoBehaviour
     private void Update()
     {
         time_passed += Time.deltaTime;
+        
         if(time_passed >= time_for_change_route)
         {
 
@@ -61,18 +61,33 @@ public class WEP_Rocket : MonoBehaviour
                 changed = true;
             }          
         }
+        
+
     }
 
     private void CalLR()
     {
-        if (flag_left == true) heading = (pos_fall.transform.position + new Vector3(-2.3f, -0.69f, 0.0f) + CEP) - transform.position;
-        else heading = (pos_fall.transform.position + new Vector3(2.3f, -0.69f, 0.0f) + CEP) - transform.position;
+        Transform[] arr_aims = pos_fall.GetComponentsInChildren<Transform>(); // 자신에게 포함된 컴포넌트까지 가져온다. 주의할 것.
+        
+        Debug.Log(arr_aims.Length + ": " +pos_fall.name);
+        if (flag_left == true)
+        {
+            //heading = pos_fall.transform.position- transform.position + CEP; 
+            heading = arr_aims[1].position - transform.position + CEP;
+            Debug.Log("Left");
+        }
+        else 
+        {
+            //heading = pos_fall.transform.position- transform.position + CEP; 
+            heading = arr_aims[2].position - transform.position + CEP;
+            Debug.Log("Right");
+        }
     }
 
 
     private void ChangeRoute()
     {
-        pos_fall = WeaponManager.instance.pos_fall[0];
+        pos_fall = WeaponManager.instance.pos_fall[1];
         
         collider_Explode.enabled = true;
         CalLR();
