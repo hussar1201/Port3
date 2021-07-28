@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - MSL_AT
   - Enemy_Bullet
+  - Beacon
   layers:
   - Default
   - TransparentFX
