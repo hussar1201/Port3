@@ -208,7 +208,7 @@ Transform:
   m_Father: {fileID: 3040490331356122642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1160641214
+--- !u!54 &7118253585144227284
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,6 +224,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5660333401747643557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754788908164789218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &408625639997901705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +505,18 @@ PrefabInstance:
       propertyPath: time_for_search
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4757431976764874678, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
+      propertyPath: distance_fire_range
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757431976764874678, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
+      propertyPath: arr_destination_1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757431976764874678, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
+      propertyPath: arr_destination_2.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7064385007258939392, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -586,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087858808989254323, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
       propertyPath: m_StoppingDistance
-      value: 150
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7087858808989254323, guid: 74eb1b9ac51bd45a9ab49d31d4390286, type: 3}
       propertyPath: m_ObstacleAvoidanceType
