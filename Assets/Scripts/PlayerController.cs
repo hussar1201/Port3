@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         xRotation += rotationSpeed * PlayerInput.instance.rotate;
                 
         xInput = Input.GetAxis("Horizontal");
-
+        
         if (xRotation != 0f)
         {
             rotation_X = Quaternion.Euler(0f, xRotation, 0f);

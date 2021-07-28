@@ -5,7 +5,7 @@ using UnityEngine;
 public class WEP_Hellfire : MonoBehaviour
 {
 
-    float speed = 300f;
+    float speed = 150f;
     private Rigidbody rb;
 
     private ParticleSystem ps;
@@ -17,6 +17,10 @@ public class WEP_Hellfire : MonoBehaviour
 
     private float time_before_tracking = .2f;
     private float time_after_launched = 0f;
+
+    private float time_interval_tracking = .5f;
+    private float time_tracking = 0f;
+
     private Vector3 point_start;
     private Transform pos_pass;
     private bool flag_playsound = false;
@@ -25,7 +29,7 @@ public class WEP_Hellfire : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         collider_explosion = GetComponent<Collider>();
-        pos_pass = WeaponManager.instance.pos_fall[0];
+        
         collider_explosion.enabled = false;
         ps = GetComponentInChildren<ParticleSystem>();
         ps.Play();
@@ -35,58 +39,70 @@ public class WEP_Hellfire : MonoBehaviour
     public void Fire(GameObject target)
     {
         this.target = target;
-               
+        
+        pos_pass = WeaponManager.instance.pos_fall[0];
         transform.SetParent(GameManager.instance.transform);
         point_start = transform.position;
         fired = true;
         target_before = target.transform.position;
         ps.Play();
 
+        rb.isKinematic = false;
+
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!fired) return;
         time_after_launched += Time.deltaTime;
+        time_tracking += Time.deltaTime;
         //StartCoroutine(Startflash());
 
+        if (time_interval_tracking < time_tracking) 
+        {
+            point_start = transform.position;
+            time_tracking = 0f;
+        }          
 
+    Vector3 tmp_tgt_to_msl_now = new Vector3();
+        Vector3 tmp_tgt_to_msl_before = new Vector3();
 
         if (time_before_tracking > time_after_launched)
         {
-            //rb.MovePosition(transform.position + Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);
+
+            //rb.MovePosition(transform.position + Vector3.MoveTowards(transform.position, target.transform.position, speed).normalized * Time.deltaTime);          
+            //rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
+
             rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
 
-
-            //rb.MovePosition(transform.position + Vector3.forward * speed * Time.deltaTime);
         }
         else if (time_before_tracking <= time_after_launched)
-        {
-            //rb.isKinematic = false;
+        {          
+
             Vector3 heading, los;
+
             collider_explosion.enabled = true;
             if (target != null)
             {
 
+                Vector3 direction = target.transform.position - transform.position;
+                direction.Normalize();
+                Quaternion dirRotation = Quaternion.LookRotation(direction);
+                rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, dirRotation, 180f * Time.deltaTime)); //test1
+                rb.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime)); //Move Method 1
+
+                //rb.rotation = tmp_q;
 
                 /*
-                Vector3 tmp_rdr_to_heli = transform.position - pos_heli;
-                Vector3 tmp_tgt_to_heli = hitColliders[i].transform.position - pos_heli;
-
-                rdr_to_heli.x = tmp_rdr_to_heli.x;
-                rdr_to_heli.y = tmp_rdr_to_heli.z;
-
-                tgt_to_heli.x = tmp_tgt_to_heli.x;
-                tgt_to_heli.y = tmp_tgt_to_heli.z;
-
-                float angle = Vector2.SignedAngle(tgt_to_heli, rdr_to_heli);
-                */
-
                 heading = target.transform.position + new Vector3(0f, 1f, 0f);
                 los = heading - transform.position;
                 transform.LookAt(target.transform);
                 target_before = target.transform.position;
+                 */
+
             }
+
+            /*
             else
             {
                 heading = target_before;
@@ -94,8 +110,9 @@ public class WEP_Hellfire : MonoBehaviour
                 transform.LookAt(heading);
                 Destroy(gameObject, 0.5f);
             }
+            */
+            //rb.MovePosition(transform.position + los.normalized * speed * Time.deltaTime);          
 
-            rb.MovePosition(transform.position + los.normalized * speed * Time.deltaTime);
 
         }
 

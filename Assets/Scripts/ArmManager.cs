@@ -47,7 +47,7 @@ public class ArmManager : MonoBehaviour
     private void Start()
     {
         check_isInMenuArming = FindObjectOfType<ChopperManager>();
-        if(check_isInMenuArming != null) StartCoroutine(LoadMyAsyncScene());
+        if(check_isInMenuArming != null) StartCoroutine(LoadMyAsyncScene());        
     }
 
     private void Update()
@@ -77,6 +77,7 @@ public class ArmManager : MonoBehaviour
             btn_wep[i].ChangeImg(num);
             if (GameManager.instance.game_on == true) WeaponManager.instance.ReloadAmmo();
         }
+        
 
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41720867, g: 0.42773557, b: 0.47448558, a: 1}
+  m_IndirectSpecularColor: {r: 0.41684017, g: 0.42956665, b: 0.46985108, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2088,7 +2088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &623402378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2614,7 +2614,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713848743}
-  m_LocalRotation: {x: 0.26071382, y: 0.000000005755891, z: -0.0000000015543976, w: 0.96541613}
+  m_LocalRotation: {x: 0.26071382, y: 0.000000016032567, z: -0.0000000043296478, w: 0.96541613}
   m_LocalPosition: {x: 161, y: 20.529999, z: 104.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3999,7 +3999,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043202070}
-  m_LocalRotation: {x: 0.26071382, y: 0.000000005755891, z: -0.0000000015543976, w: 0.96541613}
+  m_LocalRotation: {x: 0.26071382, y: 0.000000016032567, z: -0.0000000043296478, w: 0.96541613}
   m_LocalPosition: {x: 0, y: 3.7999992, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4049,10 +4049,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3425174354852934752, guid: 136cdb084f2f3d740a439b0972a4ebe4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.19
-      objectReference: {fileID: 0}
     - target: {fileID: 4664759473743823224, guid: 136cdb084f2f3d740a439b0972a4ebe4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5147,7 +5143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140734527627344952, guid: 6068ff3bd837943a9827c4d6e17ec8e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 89.4
+      value: 99.8
       objectReference: {fileID: 0}
     - target: {fileID: 5140734527627344952, guid: 6068ff3bd837943a9827c4d6e17ec8e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5191,7 +5187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140734527627344953, guid: 6068ff3bd837943a9827c4d6e17ec8e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6068ff3bd837943a9827c4d6e17ec8e5, type: 3}
