@@ -97,7 +97,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d11412570f90ba4caf1b0b6dea27152, type: 2}
+  - {fileID: 2100000, guid: 5471faebdbcc34e47baecfecda463063, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,14 +135,14 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0.15789473
       - serializedVersion: 3
-        time: 0.28737408
-        value: 0.10544038
-        inSlope: -0.08376528
-        outSlope: -0.08376528
+        time: 0.19873577
+        value: 0.070436716
+        inSlope: -0.15243995
+        outSlope: -0.15243995
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.30986547
+        outWeight: 0.12638058
       - serializedVersion: 3
         time: 1
         value: 0
@@ -157,25 +157,25 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.894013, b: 0.21226418, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0.6901961}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.894013, b: 0.21226418, a: 0.7058824}
+      key1: {r: 0.9528302, g: 0.6140929, b: 0.22921856, a: 0.78431374}
+      key2: {r: 0, g: 0, b: 0, a: 0.78431374}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 53777
-      ctime1: 65535
+      ctime0: 42633
+      ctime1: 48975
       ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 46646
-      atime1: 58596
-      atime2: 0
+      atime0: 56198
+      atime1: 62364
+      atime2: 63597
       atime3: 0
       atime4: 0
       atime5: 0
@@ -183,7 +183,7 @@ TrailRenderer:
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
