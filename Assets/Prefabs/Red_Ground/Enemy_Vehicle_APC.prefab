@@ -235,8 +235,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3, y: 2, z: 3}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &6983393138207238884
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 321461286545241427, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 321461286545241427, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -739,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_Speed
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_Height
@@ -763,7 +763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: avoidancePriority
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4704122063741361032, guid: 3fa0837ebd42e54499e127a77a0ad7e4, type: 3}
       propertyPath: m_StoppingDistance

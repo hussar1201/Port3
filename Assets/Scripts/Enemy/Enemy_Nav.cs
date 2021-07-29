@@ -52,12 +52,14 @@ public class Enemy_Nav : MonoBehaviour
         
         time += Time.deltaTime;
         distance = Mathf.Abs((pc.transform.position - transform.position).magnitude);
-        Debug.Log(distance);
+
         if (time >= time_for_search)
         {
             time = 0f;
-            pathFinder.isStopped = false;
-            pathFinder.SetDestination(tgt_destination.position);
+            if (tgt_destination != null) { 
+                pathFinder.isStopped = false;
+                pathFinder.SetDestination(tgt_destination.position);
+            }
 
             if (pathFinder.velocity == Vector3.zero) { stopped = true; }                    
             transform_parent.LookAt(pc.transform);

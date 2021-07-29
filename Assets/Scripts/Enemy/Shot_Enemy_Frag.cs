@@ -24,11 +24,11 @@ public class Shot_Enemy_Frag : MonoBehaviour
         ps = GetComponentInChildren<ParticleSystem>();
         collider_explosion.enabled = false;
 
-        transform.LookAt(pos_for_explosion);
-
-        pos_CEP = new Vector3(Random.Range(0.1f, .3f), Random.Range(0.1f, .3f), Random.Range(0.1f, .3f));
+        pos_CEP = new Vector3(Random.Range(0.1f, .2f), Random.Range(0.1f, .2f), Random.Range(0.1f, .2f));
 
         pos_for_explosion += pos_CEP;
+        transform.LookAt(pos_for_explosion);
+
 
     }
 
@@ -36,7 +36,7 @@ public class Shot_Enemy_Frag : MonoBehaviour
     void Update()
     {
         direction_heading = pos_for_explosion - transform.position;
-                
+                        
         if (Mathf.Abs(direction_heading.x) < pos_CEP.x || Mathf.Abs(direction_heading.y) < pos_CEP.y || Mathf.Abs(direction_heading.z) < pos_CEP.z)
             //if (direction_heading == pos_for_explosion)
             {
@@ -46,9 +46,10 @@ public class Shot_Enemy_Frag : MonoBehaviour
             Destroy(gameObject, .2f);
         }
         else
-        {          
+        {
             //rb.MovePosition(transform.position + direction_heading.normalized * speed * Time.deltaTime);
             transform.position += direction_heading.normalized * speed * Time.deltaTime;
+            //transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
 }
