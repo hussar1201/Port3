@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet_cannon : MonoBehaviour
 {
-    float speed = 2000f;
+    float speed = 100f;
     private Rigidbody rb;
    
     private int changed = 0;
@@ -23,29 +23,32 @@ public class Bullet_cannon : MonoBehaviour
 
     public void Start()
     {
-        SetCEP();             
+        SetCEP();
+        /*
         pos_fall = WeaponManager.instance.pos_fall[0];
         heading = (pos_fall.transform.position) - transform.position;       
         rb = GetComponent<Rigidbody>();
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
+        */
+        //rb.AddForce(transform.forward+CEP * speed, ForceMode.Force);
+
+        Destroy(gameObject, 4f);
     }
 
     private void SetCEP()
     {
         for (int i = 0; i < arr_CEP.Length; i++)
         {
-            arr_CEP[i] = Random.Range(0f, .1f);
+            arr_CEP[i] = Random.Range(0f, .05f);
         }
         CEP = new Vector3(arr_CEP[0], arr_CEP[1], arr_CEP[2]);
     }
 
     private void Update()
     {
-        time_passed += Time.deltaTime;
-        if (time_passed >= time_for_change_route[changed])
-        {
-            if(changed<2) ChangeRoute(++changed);
-        }
+
+        transform.position += transform.forward * speed * Time.deltaTime;        
+
     }
 
     private void ChangeRoute(int num)
@@ -66,8 +69,7 @@ public class Bullet_cannon : MonoBehaviour
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
             tmp.Die();
         }
-        rb.isKinematic = true;
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 
 

@@ -64,7 +64,7 @@ public class PlayerInput : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q)) rotate = -1;
             move = Input.GetAxis("Vertical");
         }
-
+        
         if (Input.GetKey(KeyCode.M)) fire_msl = true;
         if (Input.GetKey(KeyCode.G)) fire_gun = true;
         if (Input.GetKey(KeyCode.R)) fire_rocket = true;

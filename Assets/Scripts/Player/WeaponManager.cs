@@ -8,9 +8,9 @@ public class WeaponManager : MonoBehaviour
     private WEP_hardpoint[] arr_hardPoint;
     public static int ROCKET_PER_PACKS = 64;
     public static int HELLFIRE_PER_PACKS = 8;
-    private float interval_time_hellfire = 2.0f;
-    private float interval_time_rocket = .5f;
-    private float interval_time_gun = .3f;
+    private float interval_time_hellfire = 1.8f;
+    private float interval_time_rocket = .35f;
+    private float interval_time_gun = .1f;
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;

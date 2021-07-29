@@ -1206,26 +1206,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1015960703}
     m_Modifications:
-    - target: {fileID: 420215882, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420215883, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420215885, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420215886, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420215887, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6588504636510328803, guid: 2e7d170524db18847af4e69ae7d23084, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2777,8 +2757,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713848743}
-  m_LocalRotation: {x: 0.26071382, y: 0.000000006938133, z: -0.0000000018736652, w: 0.96541613}
-  m_LocalPosition: {x: 161, y: 20.529999, z: 101.689995}
+  m_LocalRotation: {x: 0.2926916, y: 0.000000022752884, z: -0.0000000069645774, w: 0.9562069}
+  m_LocalPosition: {x: 161, y: 22.75, z: 100.10999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 100217876}
@@ -4356,8 +4336,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043202070}
-  m_LocalRotation: {x: 0.26071382, y: 0.000000006938133, z: -0.0000000018736652, w: 0.96541613}
-  m_LocalPosition: {x: 0, y: 3.7999992, z: 3.5}
+  m_LocalRotation: {x: 0.2926916, y: 0.000000022752884, z: -0.0000000069645774, w: 0.9562069}
+  m_LocalPosition: {x: 0, y: 6.0200005, z: 1.9199982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2011621465}
@@ -7936,7 +7916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 7.2299995, z: -12.410004}
+  m_FollowOffset: {x: 0, y: 9.450001, z: -13.9900055}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -8315,6 +8295,14 @@ PrefabInstance:
     - target: {fileID: 5926377012374235684, guid: 359c32024a5623d4f95d28c832266daa, type: 3}
       propertyPath: m_Name
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926377012374235684, guid: 359c32024a5623d4f95d28c832266daa, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926377012374235685, guid: 359c32024a5623d4f95d28c832266daa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5926377012374235687, guid: 359c32024a5623d4f95d28c832266daa, type: 3}
       propertyPath: m_RootOrder

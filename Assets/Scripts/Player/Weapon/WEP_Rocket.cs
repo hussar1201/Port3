@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WEP_Rocket : MonoBehaviour
 {
-    float speed = 1200f;
+    float speed = 1500f;
     private Rigidbody rb;
 
     public ParticleSystem[] effects;
@@ -46,24 +46,10 @@ public class WEP_Rocket : MonoBehaviour
                 
         rb = GetComponent<Rigidbody>();
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
+        Destroy(gameObject, 4f);
+        StartCoroutine(EnableCollider());
     }
 
-    private void Update()
-    {
-        time_passed += Time.deltaTime;
-        
-        if(time_passed >= time_for_change_route)
-        {
-
-            if (!changed)
-            {
-                ChangeRoute();
-                changed = true;
-            }          
-        }
-        
-
-    }
 
     private void CalLR()
     {
@@ -95,25 +81,31 @@ public class WEP_Rocket : MonoBehaviour
     }
 
 
-
-
-
     private void OnCollisionEnter(Collision collision)
     {
+        rb.velocity = Vector3.zero;
+        rb.isKinematic = true;
         effects[0].Stop();
         effects[1].Play();
-
+        
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
             tmp.Die();
         }
-        rb.isKinematic = true;
+        
 
         Destroy(gameObject, 0.5f);
     }
 
 
+    IEnumerator EnableCollider()
+    {
+
+        yield return new WaitForSeconds(.1f);
+        Debug.Log("XXXXXX");
+        collider_Explode.enabled = true;       
+    }
 
 
 

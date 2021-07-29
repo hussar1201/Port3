@@ -75,7 +75,7 @@ public class WEP_Hellfire : MonoBehaviour
                 Vector3 direction = target.transform.position - transform.position;
                 direction.Normalize();
                 Quaternion dirRotation = Quaternion.LookRotation(direction);
-                rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, dirRotation, 180f * Time.deltaTime)); //test1
+                rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, dirRotation, 120f * Time.deltaTime)); //test1
                 rb.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime)); //Move Method 1                       
             }
         }
