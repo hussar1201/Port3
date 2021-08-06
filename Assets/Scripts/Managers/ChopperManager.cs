@@ -26,7 +26,9 @@ public class ChopperManager : MonoBehaviour
     public void changeChopper(int x)
     {
         if(x==1) if(++cnt_chopper==arr_choppers.Length) cnt_chopper=0;
-        if(x==0) if (--cnt_chopper == -1) cnt_chopper = arr_choppers.Length-1;
+        if(x==0) if((--cnt_chopper) == -1) cnt_chopper = arr_choppers.Length-1;
+
+        Debug.Log("Clicked");
 
         for (int i = 0; i < arr_choppers.Length; i++)
         {

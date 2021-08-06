@@ -22,7 +22,7 @@ public class WEP_rocketpack : MonoBehaviour, Projectilepack
         WEP_Rocket tmp = Instantiate(prefab, pos_of_packs[i].position, Quaternion.identity);
         tmp.flag_left = flag_left;
 
-        tmp.transform.LookAt(WeaponManager.instance.pos_fall[2]);
+        tmp.transform.LookAt(WeaponManager.instance.pos_fall[0]);
 
         return true;
     }

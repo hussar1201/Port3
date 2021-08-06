@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet_cannon : MonoBehaviour
 {
-    float speed = 100f;
+    float speed = 80f;
     private Rigidbody rb;
    
     private int changed = 0;
@@ -17,7 +17,9 @@ public class Bullet_cannon : MonoBehaviour
     float time_passed;
     float[] time_for_change_route = { 0.3f, .6f, .9f };
 
-    private Transform pos_fall;
+    Collider cc;
+
+    public Transform pos_fall;
 
     public void CheckType() { }
 
@@ -25,14 +27,25 @@ public class Bullet_cannon : MonoBehaviour
     {
         SetCEP();
         /*
-        pos_fall = WeaponManager.instance.pos_fall[0];
+       
         heading = (pos_fall.transform.position) - transform.position;       
-        rb = GetComponent<Rigidbody>();
+        
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
         */
         //rb.AddForce(transform.forward+CEP * speed, ForceMode.Force);
+        cc = GetComponent<Collider>();
+        cc.enabled = false;
 
-        Destroy(gameObject, 4f);
+        pos_fall = WeaponManager.instance.pos_fall[0];
+        heading = (pos_fall.transform.position) - transform.position;
+
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(10000f * heading.normalized, ForceMode.Force);
+        
+        StartCoroutine(EnableCollider());
+        
+        Destroy(gameObject, 3f);
+
     }
 
     private void SetCEP()
@@ -47,7 +60,7 @@ public class Bullet_cannon : MonoBehaviour
     private void Update()
     {
 
-        transform.position += transform.forward * speed * Time.deltaTime;        
+        //transform.position += transform.forward * speed * Time.deltaTime;        
 
     }
 
@@ -70,6 +83,13 @@ public class Bullet_cannon : MonoBehaviour
             tmp.Die();
         }
         Destroy(gameObject);
+    }
+
+
+    IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(.1f);
+        cc.enabled = true;
     }
 
 

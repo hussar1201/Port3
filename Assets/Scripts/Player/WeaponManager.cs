@@ -10,7 +10,7 @@ public class WeaponManager : MonoBehaviour
     public static int HELLFIRE_PER_PACKS = 8;
     private float interval_time_hellfire = 1.8f;
     private float interval_time_rocket = .35f;
-    private float interval_time_gun = .1f;
+    private float interval_time_gun = .15f;
     private float lastfiretime_hellfire;
     private float lastfiretime_rocket;
     private float lastfiretime_gun;
