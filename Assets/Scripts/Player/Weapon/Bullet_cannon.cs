@@ -6,46 +6,27 @@ public class Bullet_cannon : MonoBehaviour
 {
     float speed = 80f;
     private Rigidbody rb;
-   
-    private int changed = 0;
-    
-    
+    private int changed = 0;   
     private float[] arr_CEP = { 0f, 0f, 0f };
     Vector3 CEP;
     Vector3 heading;  
-
     float time_passed;
     float[] time_for_change_route = { 0.3f, .6f, .9f };
-
     Collider cc;
-
     public Transform pos_fall;
-
     public void CheckType() { }
 
     public void Start()
     {
         SetCEP();
-        /*
-       
-        heading = (pos_fall.transform.position) - transform.position;       
-        
-        rb.AddForce(heading.normalized * speed, ForceMode.Force);
-        */
-        //rb.AddForce(transform.forward+CEP * speed, ForceMode.Force);
         cc = GetComponent<Collider>();
         cc.enabled = false;
-
         pos_fall = WeaponManager.instance.pos_fall[0];
         heading = (pos_fall.transform.position) - transform.position;
-
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(10000f * heading.normalized, ForceMode.Force);
-        
+        rb.AddForce(10000f * heading.normalized, ForceMode.Force);     
         StartCoroutine(EnableCollider());
-        
         Destroy(gameObject, 3f);
-
     }
 
     private void SetCEP()
@@ -57,13 +38,6 @@ public class Bullet_cannon : MonoBehaviour
         CEP = new Vector3(arr_CEP[0], arr_CEP[1], arr_CEP[2]);
     }
 
-    private void Update()
-    {
-
-        //transform.position += transform.forward * speed * Time.deltaTime;        
-
-    }
-
     private void ChangeRoute(int num)
     {
         pos_fall = WeaponManager.instance.pos_fall[num];
@@ -73,10 +47,8 @@ public class Bullet_cannon : MonoBehaviour
         rb.AddForce(heading.normalized * speed, ForceMode.Force);
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Enemy tmp = collision.gameObject.GetComponent<Enemy>();
@@ -85,13 +57,10 @@ public class Bullet_cannon : MonoBehaviour
         Destroy(gameObject);
     }
 
-
     IEnumerator EnableCollider()
     {
         yield return new WaitForSeconds(.1f);
         cc.enabled = true;
     }
-
-
 
 }

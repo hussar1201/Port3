@@ -10,43 +10,30 @@ public class Enemy_Nav : MonoBehaviour
     private Transform transform_parent;
     public float distance_fire_range = 300f;
     private float distance = 1000f;
-
-
     public Transform[] arr_destination_1;
     public Transform[] arr_destination_2;
     private List<Transform[]> list_arr_destination = new List<Transform[]>();
     private Transform tgt_destination;
-
     public float speed {
         get;
         private set;
     }
-
-
     public float time_for_search = 2f;
     private float time = 0f;
-
     public bool stopped = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         pathFinder = GetComponent<NavMeshAgent>();
         transform_parent = GetComponentInParent<Transform>();
-  
         pc = FindObjectOfType<PlayerController>();
         speed = pathFinder.speed;
         list_arr_destination.Add(arr_destination_1);
         list_arr_destination.Add(arr_destination_2);
-
         int selected_num = Random.Range(0, arr_destination_1.Length);
-        //tgt_destination = arr_destination_1[selected_num];
         FindNextWayPoint(0);
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -72,16 +59,8 @@ public class Enemy_Nav : MonoBehaviour
             {
                 pathFinder.isStopped = stopped = false;
             }
-
-
-
-        }
-        
-
-       
-
+        }     
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -95,7 +74,6 @@ public class Enemy_Nav : MonoBehaviour
             Debug.Log(x);
             FindNextWayPoint(x);
         }
-
     }
 
     private void FindNextWayPoint(int x)
@@ -106,6 +84,5 @@ public class Enemy_Nav : MonoBehaviour
         tgt_destination = list_arr_destination[x][selected_num];
         Debug.Log(x + "-" + selected_num);
     }
-
 
 }

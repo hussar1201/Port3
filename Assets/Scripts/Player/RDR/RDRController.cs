@@ -20,8 +20,6 @@ public class RDRController : MonoBehaviour
     float interval_scan = 0.5f;
     float time_scan = 0f;
 
-
-
     public static RDRController instance
     {
         get
@@ -34,7 +32,6 @@ public class RDRController : MonoBehaviour
         }        
     }
 
-
     private void Awake()
     {
         if (instance != this)
@@ -45,7 +42,6 @@ public class RDRController : MonoBehaviour
         tgt_now = new RDR_TrackingInfo();
     }
 
-
     public void ChangeTypeOfSearch()
     {        
         if (++type_of_search == typesTGT.Length) type_of_search = 0;
@@ -55,7 +51,6 @@ public class RDRController : MonoBehaviour
         list_frontTGT.Clear();
     }
 
-    // not yet....
     public void ChangeTarget()
     {      
         for (int i=0;i<list_frontTGT.Count;i++)
@@ -65,9 +60,7 @@ public class RDRController : MonoBehaviour
                 target = list_frontTGT[i].tgt;
             }
         }
-
     }
-
 
     private void Update()
     {

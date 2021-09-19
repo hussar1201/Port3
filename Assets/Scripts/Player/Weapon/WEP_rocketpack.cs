@@ -12,21 +12,14 @@ public class WEP_rocketpack : MonoBehaviour, Projectilepack
 
     public bool Fire(GameObject target)
     {
-        
         int i = 0;
-
         if (flag_left == true) i = 0;
         else i = 1;
         flag_left = !flag_left;
-
-        WEP_Rocket tmp = Instantiate(prefab, pos_of_packs[i].position, Quaternion.identity);
+        WEP_Rocket tmp = 
+            Instantiate(prefab, pos_of_packs[i].position, Quaternion.identity);
         tmp.flag_left = flag_left;
-
         tmp.transform.LookAt(WeaponManager.instance.pos_fall[0]);
-
         return true;
     }
-
-
-
 }

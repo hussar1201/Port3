@@ -1,38 +1,26 @@
-/* ?? ?????????? Player?? ???? ?????????? Heli?? ??????????, 
- * RigidBody ???????? ???????? Y?? ???? ?????? ???????? ????
- * ???? ?????? Y?? ?????? ???????????? ???????? ?????? ????
- * 
- */
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    HeliController player_Huey; // ???? ?????????? ???????? ?????????? ????
+    HeliController player_Huey;
     public float speed = 100f;
     public float rotationSpeed = 1f;
     Rigidbody rb;
     private int HP = 100;
     float xInput, zInput, yInput;
     float move_slide_LR;
-
-    float xRotation = 0.0f; // yaw ??????
-    
+    float xRotation = 0.0f; 
     private const float LIMIT_DOWN = 3.2f;
     private const float LIMIT_UP = 40f;
     private const float LIMITER_ALT_SPEED_CHANGED = 2f;
-
     private float alt_calculated, move_LR_calculated;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        player_Huey = GetComponentInChildren<HeliController>(); //???????? ?? ???? ???????? ????.
-        rb = GetComponent<Rigidbody>(); //Player?? rb(??????)
+        player_Huey = GetComponentInChildren<HeliController>(); 
+        rb = GetComponent<Rigidbody>(); 
     }
 
     public int getHP()
@@ -42,11 +30,9 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        // GameManager.GameOver = true;
-        gameObject.SetActive(false);
+       gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
+ 
     void Update()
     {    
         
@@ -75,16 +61,13 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x,LIMIT_UP, transform.position.z);
             else
                 speed_current += (transform.up * speed * (yInput / LIMITER_ALT_SPEED_CHANGED));           
-
         }
-            
 
         if (move_slide_LR != 0f) 
             speed_current += (transform.right * speed * (move_slide_LR / (LIMITER_ALT_SPEED_CHANGED * 1.5f)));
 
         player_Huey.setPitch(zInput, xRotation);
-        rb.velocity = speed_current;
-       
+        rb.velocity = speed_current;     
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,8 +77,4 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.playOneShotAudio(SoundManager.sounds.warning,2);               
         }
     }
-
-
-
-
 }

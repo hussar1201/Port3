@@ -38,8 +38,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
-        }
-        
+        }      
         ChopperManager tmp = FindObjectOfType<ChopperManager>();
         if (tmp == null)
         {
@@ -52,24 +51,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.DeleteAll();
             armset[0] = 0;
             armset[1] = 1;
-        }        
-        
+        }             
     }
 
     public void ChangeSet(int num)
     {
         WeaponManager.instance.ChangeSet(num);               
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+  
 }

@@ -10,31 +10,24 @@ public class ColliderCollecter : MonoBehaviour
 
     private void Start()
     {
-        ph = GetComponentInParent<PlayerHealth>();       
+        ph = GetComponentInParent<PlayerHealth>();
     }
-
-  
 
     private void OnCollisionEnter(Collision collision)
     {
-         
+
         ContactPoint cp = collision.GetContact(0);
 
-        Collider c_this = cp.thisCollider; // Get which part of Vehicle Damaged.
-        // Collider c_other = cp.otherCollider; //Collider of Enemy Bullet
-       
-            for(int i = 0; i < arr_colliders.Length;i++)
+        Collider c_this = cp.thisCollider;
+        for (int i = 0; i < arr_colliders.Length; i++)
+        {
+            if (arr_colliders[i].Equals(c_this))
             {
-                if (arr_colliders[i].Equals(c_this))
-                {
-                    ph.OnPartDamaged(i);
-                }
-
+                ph.OnPartDamaged(i);
             }
+
+        }
     }
-
-
-
 
 }
 

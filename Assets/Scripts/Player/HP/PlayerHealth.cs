@@ -8,8 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public enum part { Cockpit, Wing, Engine, FrameRear, TailH, TailV };
     private int[] arr_part_HP = new int[6];
 
-
-    // Start is called before the first frame update
     void Start()
     {
         colliderCollecter = GetComponentInChildren<ColliderCollecter>();
@@ -18,9 +16,7 @@ public class PlayerHealth : MonoBehaviour
         {
             arr_part_HP[i] = 3;
         }
-
     }
-
 
     public void OnPartDamaged(int x)
     {
@@ -28,6 +24,5 @@ public class PlayerHealth : MonoBehaviour
         if (x == 5) UIManager.instance.indicator_HP_Status.Set_HP_part(x-1);
         else UIManager.instance.indicator_HP_Status.Set_HP_part(x);
     }
-
 
 }

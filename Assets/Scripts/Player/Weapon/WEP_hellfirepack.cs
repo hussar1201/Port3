@@ -12,8 +12,6 @@ public class WEP_hellfirepack : MonoBehaviour, Projectilepack
     {
         arr_Hellfire = GetComponentsInChildren<WEP_Hellfire>();
         size_pack = arr_Hellfire.Length;
-
-
     }
 
     public bool Fire(GameObject target)
@@ -24,10 +22,5 @@ public class WEP_hellfirepack : MonoBehaviour, Projectilepack
             return true;
         }
         return false;
-        
-        
     }
-
-
-
 }

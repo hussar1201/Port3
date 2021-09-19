@@ -10,18 +10,6 @@ public class WEP_hardpoint : MonoBehaviour
     public int num_hellfires;
     public int num_rockets;
 
-    public int wep_set
-    {
-        get;
-        private set;
-    }
-
-    private void Start()
-    {
-        wep_set = GameManager.instance.armset[num_hardpoint];
-        armset();
-    }
-
     private void armset()
     {
         for (int i = 0; i < arr_pack.Length; i++)
@@ -33,11 +21,22 @@ public class WEP_hardpoint : MonoBehaviour
         wep_pack = GetComponentInChildren<Projectilepack>();      
     }
 
-
     public bool Fire(GameObject target)
     {      
         bool result = wep_pack.Fire(target);
         return result;
+    }
+
+    public int wep_set
+    {
+        get;
+        private set;
+    }
+
+    private void Start()
+    {
+        wep_set = GameManager.instance.armset[num_hardpoint];
+        armset();
     }
 
 

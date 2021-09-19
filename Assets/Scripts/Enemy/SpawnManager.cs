@@ -11,7 +11,6 @@ public class SpawnManager : MonoBehaviour
     public Transform[] arr_destination_1;
     public Transform[] arr_destination_2;
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
@@ -27,13 +26,5 @@ public class SpawnManager : MonoBehaviour
             tmp_Nav.arr_destination_2 = arr_destination_2;
             time = 0f;
         }       
-
-
     }
-
-    
-
-
-
-
 }

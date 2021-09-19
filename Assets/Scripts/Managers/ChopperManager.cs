@@ -13,8 +13,7 @@ public class ChopperManager : MonoBehaviour
 
     public GameObject[] arr_choppers;
     private int cnt_chopper;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         cnt_chopper = 0;            
@@ -54,10 +53,5 @@ public class ChopperManager : MonoBehaviour
                 err_img2.gameObject.SetActive(true);
             }
         }
-
     }
-
-
-
-
 }
